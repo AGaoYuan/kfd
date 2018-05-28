@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<books>
+	<book typeId="1">
+		<bookId>001</bookId>
+		<bookName>Maven实战</bookName>
+		<bookPrice>51</bookPrice>
+		<bookAuthor>陈晓斌</bookAuthor>
+	</book>
+
+	<book typeId="2">
+		<bookId>002</bookId>
+		<bookName>谈谈支付宝底层体系架构</bookName>
+		<bookPrice>151</bookPrice>
+		<bookAuthor>程立</bookAuthor>
+	</book>
+
+	
+</books>
