@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+</style>
+
+<script type="text/javascript">
+//表单元素有name才能提交到服务器，器他都不能
+	window.onload=function(){
+		var lis = document.getElementsByTagName('li');
+		
+		for (var i = 0; i < lis.length; i++) {
+			lis[i].onmouseover = function(){
+				this.style.background = "red";
+				
+			}
+		}
+		
+		 for (var i = 0; i < lis.length; i++) {
+			lis[i].onmouseout = function(){
+				this.style.backgroundColor = "";
+			}
+		} 
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+
+<ul>
+	<li>llll</li>
+	<li>aaaa</li>
+	<li>bbbb</li>
+	<li>cccc</li>
+</ul>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>继承和原型链</title>
+<!-- 继承和原型链 -->
+<script type="text/javascript">
+	//父类
+	function Humans(name,age){
+		this.name = name;
+		this.age = age;
+		this.clothing=['trousers','dress','jacket'];
+		
+	}
+	//子类
+	function Man(phone,name,age){
+		//表示调用谁的父类构造 Humans
+		Humans.call(this,name,age);
+		this.phone = phone;
+	}
+	//子类继承父类原型
+	Man.prototype = new Humans();
+	
+	var flag = Humans.prototype.isPrototypeOf(new Humans());
+	alert(flag);
+	var man1 = new Man('110','小张',20);
+	alert(man1.name);
+	var man2 = new Man('120','小明',15);
+	alert(man2.name);
+	
+	
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>

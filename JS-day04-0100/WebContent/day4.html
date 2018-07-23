@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>继承和原型链</title>
+<!-- 继承和原型链 -->
+<script type="text/javascript">
+	//父类
+	function Humans(){
+		this.foot = 2;
+	}
+	//父类原型方法
+	Humans.prototype.getFoot=function(){
+		return this.foot;
+	}
+	//父类属性
+	Humans.prototype.legs=5;
+	
+	//子类
+	function Man(){
+		this.head=1;
+	}
+	//子类Man原型继承妇父类Humans
+	Man.prototype = new Humans();
+	//子类原型方法
+	Man.prototype.getHead = function(){
+		return this.head;
+	}
+	//实例化出Man对象
+	var man1 = new Man();
+	alert('head:'+man1.head);
+	alert('getHead:'+man1.getHead());
+	alert('父类对象：'+man1.foot);
+	alert('父类原型对象的属性：'+man1.legs);
+	
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>

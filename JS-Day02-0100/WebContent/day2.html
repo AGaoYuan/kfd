@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	//打印出上一个网页的路径
+	/* var path = document.referrer;
+	
+	alert(path); */
+	
+	var today = new Date();
+	var tdate = new Date("september 1,2013,14:58:12");
+	
+	
+	
+	function disptime(){
+		var today = new Date();
+		var hh = today.getHours();
+		var mm = today.getMinutes();
+		var ss = today.getSeconds();
+		
+		document.write("现在的时间是:"+hh+":"+mm+":"+ss);
+	}
+	
+	disptime()
+</script>
+
+</head>
+<body>
+<div id="myclock"></div>
+
+</body>
+</html>

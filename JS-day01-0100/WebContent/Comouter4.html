@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function chapter4(){
+	var count = 0;
+	//上级练习4
+	var subject = prompt('请输入考试的科目数量');
+	for (var i = 0; i < subject; i++) {
+		var sum = prompt('请输入'+(i+1)+'门科目成绩');
+		
+		var s1 = parseInt(sum);
+		var s2 = isNaN(subject);
+		if (s2) {
+			alert('输入的不是数字 ');
+		}else{
+			if (s1 ==5) {
+				alert('5门科目的总成绩是：426');
+			}else if (s1<0) {
+				
+				alert('成绩不能是负数！ ');
+			}else if (s1 == 0) {
+				alert('成绩不能为0');
+			}
+		}
+		count = s1+s1;
+	}
+	alert(count);
+	
+}
+chapter4();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

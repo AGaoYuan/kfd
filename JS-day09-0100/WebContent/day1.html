@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jQuery1.11.1.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.0.js"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$('#btn').click(function(){
+			var Email = $("#email");
+			
+			if (Email.validity.patternMismatch==true) {
+				alert(1);
+				Email.setCustomValidity("邮箱必须是6~10位字符！");
+				return false;
+			}
+			
+		});
+		
+		
+	});
+	
+</script>
+
+</head>
+<body>
+<table id="center" border="0" cellspacing="0" cellpadding="0">
+	<form action="success.html" method="post" id="myform" name="myform">
+		<tr>
+			<td>Email：<input id="email" type="text" name="email1" 
+				class="inputs" placeholder="邮箱必须包含@和.符号" required
+				pattern="^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$" /><span id="emailmsg" style="color: red"></span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;密码：<input id="pwd" type="password" name="pwd"
+				class="inputs" /><span id="pwdmsg" style="color: red"></span></td>
+		</tr>
+		<tr>
+			<td style="height: 35px; padding-left: 30px;"><input id="btn"
+				type="submit" value="登录" class="rb1" /></td>
+		</tr>
+	</form>
+</table>
+
+</body>
+</html>

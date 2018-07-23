@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网易新用户注册页面</title>
+    <link  rel="stylesheet" href="css/register.css" />
+    <script type="text/javascript" src="js/jQuery1.11.1.js"></script>
+     <script type="text/javascript" src="jquery-migrate-1.2.0.js"></script>
+    <script type="text/javascript">
+    //通行证用户名
+	function checkname() {  
+		var username = $("#userName").val();
+		if (username=="") {
+			$("#userNameId").removeClass().addClass("error_prompt");
+			$("#userNameId").html("通行证不能为空！");
+			return false;
+		}
+		var reg = /^(\d*\w+){4,18}$/;//正则表达式
+		if (reg.test(username)) {
+			$("#userNameId").removeClass().addClass("ok_prompt");
+			$("#userNameId").html("通行证用户名格式正确！");
+			return false;
+		} else {
+			$("#userNameId").removeClass().addClass("error_prompt");
+			$("#userNameId").html("通行证用户名不正确！");
+			return false;
+		}
+		return true;
+	};
+
+	//密码
+	function checkpwd() {   
+		var pwd = $("#pwd").val();
+		if (pwd.length < 6 || pwd.length > 16) {
+			$("#pwdId").removeClass().addClass("error_prompt");
+			$("#pwdId").html("密码长度为6-16");
+			//return false;
+		} else {
+			$("#pwdId").removeClass().addClass("ok_prompt");
+			$("#pwdId").html("密码格式正确");
+			//return false;
+		}
+		$("#repwd").blur(function(){
+		var repwd = $("#repwd").val();//再次输入密码
+		if (pwd == repwd) {
+			$("#repwdId").removeClass().addClass("ok_prompt");
+			$("#repwdId").html("两次输入的密码一样");
+			//alert("两次输入的密码不一样，请重新输入");
+			//return false;
+		}else{
+			$("#repwdId").removeClass().addClass("error_prompt");
+			$("#repwdId").html("两次输入的密码不一样");	
+		}
+		return true;
+		});
+	};
+	
+	//昵称
+	function checknickName() {
+		var name = $("#nickName").val();
+		var len=name.replace(/[u4e00-\u9fa5]/g,"xx").length ;
+		if (len>=4&&len<=20) {
+			$("#nickNameId").removeClass().addClass("ok_prompt");
+			$("#nickNameId").html("昵称输入正确！");
+			//return false;
+		} else {
+			$("#nickNameId").removeClass().addClass("error_prompt");
+			$("#nickNameId").html("昵称输入不正确！");
+			
+		}
+		return true;
+	};
+	
+	//关联手机号
+	function checkphone() {
+		var phone = $("#tel").val();
+		var len=/^[0-9]{11}$/;
+		if (phone.length ==11) {
+			$("#telId").removeClass().addClass("ok_prompt");
+			$("#telId").html("关联手机号输入正确");
+			//return false;
+		} else {
+			$("#telId").removeClass().addClass("error_prompt");
+			$("#telId").html("关联手机号输入不正确");
+		}
+		return true;
+	};
+	
+	//电子邮箱
+	function checkEmail() {
+		var username = $("#email").val();
+		var reg = /^\w+@\w+\.\w+$/;
+		if (reg.test(username)) {
+			$("#emailId").removeClass().addClass("ok_prompt");
+			$("#emailId").html("邮箱格式正确!");
+			//return false;
+		}else{
+			$("#emailId").removeClass().addClass("error_prompt");
+			$("#emailId").html("邮箱格式不正确!");
+			return false;
+		}
+		return true;
+
+	};
+	
+	$(function() { //失去焦点
+		var username = $("#userName");
+		username.blur(function() {
+			return checkname();
+		});
+		var pwd = $("#pwd");
+		pwd.blur(function() {
+			return checkpwd();
+		});
+		var name = $("#nickName");
+		name.blur(function() {
+			return checknickName();
+		});
+		var phone = $("#tel");
+		phone.blur(function() {
+			return checkphone();
+		});
+		var email = $("#email");
+		email.blur(function() {
+			return checkEmail();
+		});
+		
+		var typeIm = $("[type=image]");
+		typeIm.submit(function(){
+			var Email = checkEmail();
+			var phone = checkphone();
+			var nickName = checknickName();
+			var pwd = checkpwd();
+			var name = checkname();
+			return Email&&phone&&nickName&&pwd&&name;
+		});
+		
+	});
+    	
+    </script>
+    
+</head>
+
+<body>
+<div id="header"><img src="images/register_logo.gif" alt="logo"/></div>
+<div id="main">
+                <form id="registerForm" action="" method="post" name="myform">
+                    <dl>
+                        <dt>通行证用户名：</dt>
+                        <dd><input type="text" id="userName" class="inputs userWidth"/> @163.com</dd>
+                        <dd><div id="userNameId"></div></dd>
+                    </dl>
+                    <dl>
+                        <dt>登录密码：</dt>
+                        <dd><input type="password" id="pwd" class="inputs"/></dd>
+                        <dd><div id="pwdId"></div></dd>
+                    </dl>
+                    <dl>
+                        <dt>重复登录密码：</dt>
+                        <dd><input type="password" id="repwd" class="inputs"/></dd>
+                        <dd><div id="repwdId"></div></dd>
+                    </dl>
+                    <dl>
+                        <dt>性别：</dt>
+                        <dd><input name="sex" type="radio" value="" checked="checked"/>男 <input name="sex" type="radio" value="" />女 </dd>
+                    </dl>
+                    <dl>
+                        <dt>真实姓名：</dt>
+                        <dd><input type="text" id="realName" class="inputs" /></dd>
+                    </dl>
+                    <dl>
+                        <dt>昵称：</dt>
+                        <dd><input type="text" id="nickName" class="inputs"/></dd>
+                        <dd><div id="nickNameId"></div></dd>
+                    </dl>
+                    <dl>
+                        <dt>关联手机号：</dt>
+                        <dd><input type="text" id="tel" class="inputs"/></dd>
+                        <dd><div id="telId"></div></dd>
+                    </dl>
+                    <dl>
+                        <dt>保密邮箱：</dt>
+                        <dd><input type="email" id="email" class="inputs"/></dd>
+                        <dd><div id="emailId"></div></dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd><input name=" " type="image" src="images/button.gif"/></dd>
+                    </dl>
+                </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>创建对象</title>
+<script type="text/javascript">
+	//定义Person类
+	function Person(){
+		
+	}
+	//为Person的原型类添加属性
+	Person.prototype.stuName = '张三';
+	Person.prototype.stuAge = 15;
+	Person.prototype.stuAddress = '北京';
+	Person.prototype.showInfo = function(){
+		alert(this.stuName+"\n"+this.stuAge+"\n"+this.stuAddress);
+	}
+	
+	//调度函数
+	var p1 = new Person();
+	p1.showInfo();
+	
+	var p2 = new Person();
+	p2.stuName = "李四";
+	p2.stuAge = 19;
+	p2.showInfo();
+	
+	alert(p1 instanceof Person);
+	
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>

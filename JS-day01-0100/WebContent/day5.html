@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+//表单元素有name才能提交到服务器，器他都不能
+	window.onload=function(){
+		/* var dom = document.getElementById('div1');
+		alert(dom.innerText); */
+		
+		
+		var divs = document.getElementsByTagName('div');
+		for (var i = 0; i < divs.length; i++) {
+			alert(divs[i].innerText);
+		}
+		
+		var inputs = document.getElementsByName
+		
+	}
+	
+</script>
+</head>
+<body>
+
+<div id="div1" >
+111111111111
+</div>
+<div id="div2">
+222222222222
+</div>
+
+<input type="button" onclick="myrefresh()" value="看着办"/>
+	
+</body>
+</html>

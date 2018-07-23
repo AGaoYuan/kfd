@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Person(name,chinese,math){
+		this.name = name;
+		this.chinese = chinese;
+		this.math = math;
+		
+	}
+	function Student(name,chinese,math,age){
+		Person.call(this,name,chinese,math);
+		this.age = age;
+		
+	}
+	
+	//继承
+	Student.prototype = new Person();
+	
+	var stu = new Student('张三','98','80','25');
+	var Name = stu.name;
+	var num1 = stu.chinese;
+	var num2 = stu.math;
+	var Age = stu.age;
+	document.write('姓名：'+Name+"<br/>");
+	document.write("语文："+num1+"<br/>");
+	document.write("数学："+num2+"<br/>");
+	document.write('年龄：'+Age+"<br/>");
+	
+	
+	
+</script>
+
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	window.onload=function(){
+		var myDate = document.getElementById('myDate');
+		var today = new Date();//获取当前日期
+		var hh = today.getHours();//获取小时
+		var mm = today.getMinutes();//获取分钟
+		
+		myDate.innerText="现在时间:"+hh+"点"+mm+"分";
+		var myTime = document.getElementById('myTime');
+		var Month = today.getMonth();
+		var num = Month+1;
+		myTime.innerText="今天日期:"+today.getFullYear()+"年"+num+"月"+today.getDate()+"日";
+		
+		var myTime = document.getElementById('Info');
+		if (hh<=12&&hh>=5) {
+			myTime.innerText="上午好！欢迎来到北大青鸟";
+		}else if (hh<=18&&hh>=12) {
+			myTime.innerText="下午好！欢迎来到北大青鸟";
+		}else{
+			myTime.innerText="晚上好！";
+		}
+		
+		
+	}
+</script>
+
+</head>
+<body>
+	<div id="myTime"></div>
+	<div id="myDate"></div>
+	<div id="Info"></div>
+</body>
+</html>

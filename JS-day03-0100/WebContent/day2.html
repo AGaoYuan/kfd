@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		/* var myli = document.getElementById('first');
+		var parentNode = myli.parentNode;
+		alert(parentNode.innerHTML); */
+		
+		var myul = document.getElementById('myul');
+		var lis = myul.childNodes;
+		for (var i = 0; i < lis.length; i++) {
+			if (lis[i].nodeType==1) {
+				alert(lis[i].innerText);
+			}
+		}
+		
+	}
+	
+	
+</script>
+
+</head>
+<body>
+
+ <ul id="myul">
+    <li id="first">骆驼祥子</li>
+    <li>缺心眼子</li>
+    <li>鼠标垫子</li>
+  </ul>
+
+</body>
+</html>

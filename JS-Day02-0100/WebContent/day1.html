@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	//3秒后弹出一个消息框
+	/* var myinter = setInterval(timer,3000);
+	
+	clearTimeout(myinter);
+	function timer(){
+		alert('ok!');
+	} */
+	
+	var myTime;
+	
+	
+	function disptime(){
+		var today = new Date();
+		var hh = today.getHours();
+		var mm = today.getMinutes();
+		var ss = today.getSeconds();
+		
+		document.getElementById("myclock").innerHTML="现在的时间是:"+hh+":"+mm+":"+ss;
+		myTime=setTimeout("disptime()",1000);
+		
+	}
+	
+	function StartTime(){
+		
+		
+		disptime()
+		
+	}
+	
+	function StopTime(){
+		clearTimeout(myTime);
+		
+	}
+	
+	
+</script>
+
+</head>
+<body>
+<div id="myclock"></div>
+
+<input type="button"  value="开始" onclick="StartTime()"/>
+<input type="button"  value="暂停" onclick="StopTime()"/>
+
+</body>
+</html>

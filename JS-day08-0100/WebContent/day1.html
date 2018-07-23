@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jQuery1.11.1.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/* $('ul li:first').empty(); */ //remove() detach()
+		
+		//替换节点
+		/* var myli = $('<li>Hello World</li>');
+		$('ul li:first').replaceWith(myli); */
+		
+		//光棒效果
+		$('li').hover(function(){
+			$(this).css('background','pink');
+		},function(){
+			$(this).css('background','');
+		});
+		//克隆节点
+		var myCloneNode = $('ul li:first').clone(true);
+		$('ul').append(myCloneNode);
+		
+		
+	});
+	
+	
+</script>
+
+</head>
+<body>
+
+<ul id="myul">
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+	<li>444</li>
+</ul>
+
+</body>
+</html>

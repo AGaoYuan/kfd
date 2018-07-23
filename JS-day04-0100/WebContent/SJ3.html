@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Person(nation,skinColor){
+		this.nation = nation;
+		this.skinColor = skinColor;
+	}
+	function Woman(sex,nation,skinColor){
+		Person.call(this,nation,skinColor);
+		this.sex = sex;
+		Woman.returnSex = function(){
+			return sex;
+		}
+	}
+	
+	Woman.prototype = new Person();
+	var woman1 = new Woman('女','汉族','黄色');
+	document.write("民族："+ woman1.nation+"肤色："+woman1.skinColor+"性别："+woman1.sex);
+	
+	
+</script>
+
+</head>
+<body>
+
+
+</body>
+</html>

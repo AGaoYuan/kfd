@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#box{
+ border:1px solid red;
+ 
+}
+</style>
+
+<script type="text/javascript" src="js/jQuery1.11.1.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/* $('[type=button]').click(function(){
+			$('div').hide(2000);
+			
+		}); */
+		/* $('[type=button]').fadeOut(function(){
+			$('div').hide(2000);
+			
+		}); */
+		
+		 /* $('[type=button]').slideUp(function(){
+			$('div').hide(2000);
+			
+		});  */
+		
+		/* $('div').animate({'height':'500px','font-size':'50px','width':'500px'},2000); */
+		
+		$('div').animate({'height':'500px'},{queue:false,duration:2000})
+		.animate({'font-size':'50px'},{queue:false,duration:2000})
+		.animate({'width':'500px'},{queue:false,duration:2000});
+		
+		
+	});
+	
+</script>
+
+</head>
+<body>
+	<div id="box">我是div</div>
+	<input type = "button" value="动画"/>
+</body>
+</html>

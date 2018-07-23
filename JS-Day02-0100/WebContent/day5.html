@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+	window.onload = function() {
+		var timer;
+		//1.点击开始，激活事件
+		//DOM 0级 事件注册 方案  dom.onclick=function(){}
+		var btnStart = document.getElementById("btnStart");
+		btnStart.onclick = function() {
+			//获取到div中的数值
+			timer = setInterval(reduceNum, 1000);
+		}
+
+		var btnStop = document.getElementById("btnStop");
+		btnStop.onclick = function() {
+			//停止定时器
+			clearInterval(timer);
+		}
+
+	};
+
+	function reduceNum() {
+		var mydiv = document.getElementById("box");
+		var num = mydiv.innerHTML; //1
+		//临界值
+		if (num > 0) {
+			num--;
+			mydiv.innerHTML = num;
+		}
+	}
+	
+	 /*window.onload()=function(){
+		var timer;
+		var btnStart = document.getElementById("btnStart"){
+			btnStart.onclick = function(){
+				timer=setInterval(reduceNum,1000);
+			}
+		}
+		
+		var btnStop = document.getElementById("btnStop");
+		btnStop.onclick = function(){
+			clearInterval(timer);
+			
+		}
+		
+	}; 
+	
+	function reduceNum(){
+		var mydiv = document.getElementById("box");
+		var num = mydiv.innerHTML;
+		if (num>0) {
+			num--;
+			mydiv.innerHTML = num;
+		}
+		
+	}*/
+	
+	
+</script>
+
+</head>
+<body>
+
+<input type="button"  id="btnStart" value="开始"/>
+<input type="button" id="btnStop" value="停止"/>	
+<div style="color:red;" id="box">10</div>
+
+</body>
+</html>

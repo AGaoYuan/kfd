@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝购物车页面</title>
+    <link href="css/myCart.css"  rel="stylesheet" />
+    <script type="text/javascript" src="js/jQuery1.11.1.js"></script>
+    <script type="text/javascript" src="jquery-migrate-1.2.0.js"></script>
+    <script type="text/javascript">
+    /* $(function(){
+	var summer = 0;
+	var integral = 0;
+	$tr.each(function(i,dom){
+		var num = $(dom).children(".cart_td_6").find("input").val();//商品数量
+		var price = num*$(dom).children(".cart_td_5").text();//商品小计
+		$(dom).children(".cart_td_7").html(price);//显示商品小计
+		summer+=price;//计算总价
+		
+		integral +=$(dom).children(".cart_td_4").text()*num;//计算积分
+		
+	});
+}); */
+    	//01.定义一个方法让它自动计算每行商品的小计，商品总价和可获积分
+    	   function productCount() {
+    	       var Total_price= 0;//定义一个变量保存总价格
+    	       var integral = 0;//定义一个变量保存总积分
+    	       $("tr[id]").each(function (i, dom) {
+    	           //商品数量
+    	           var num = $(dom).children(".cart_td_6").find("input").val();
+    	           //商品小计
+    	           var price = num * $(dom).children(".cart_td_5").text();
+    	           //显示商品小计
+    	           $(dom).children(".cart_td_7").html(price);
+    	           //计算总价
+    	           Total_price+= price;
+    	           //计算积分
+    	           integral += $(dom).children(".cart_td_4").text() * num;
+    	       });
+    	       //定位到总价对象给文本赋值
+    	       $("#total").text(Total_price);
+    	       //定位到可获积分对象给文本赋值
+    	       $("#integral").text(integral);
+    	   }
+    	   //02.定义复选框方法
+    	    $(function () {
+    	        //调用上面我们定义好的用来自动计算商品金额的函数productCount()
+    	        productCount();
+    	        //当改变全选值时
+     			$("#allCheckBox").change(function(){
+         		//如果全选被选中，则选中所有子选项;否则取消选中子选项
+         		if($("#allCheckBox").is(":checked")){
+             		$("input[name=cartCheckBox]").prop("checked",true);
+         		}else{
+             		$("input[name=cartCheckBox]").prop("checked",false);
+         		}
+     		});
+     			//当改变子选项时，需要判断子选项是否全部被选中，如果全部被选中，那么全选被选中；否则全选不被选中
+     			$("input[name=cartCheckBox]").change(function(){
+          		if($("input[name=cartCheckBox]:checked").length==$("input[name=cartCheckBox]").length){
+              		$("#allCheckBox").prop("checked",true);
+          		}else{
+            		$("#allCheckBox").prop("checked",false);
+          		}
+     		});
+    	        //03实现商品数量的增加和减少功能
+    	        $(".hand").bind("click", function () {
+    	            var count = $(this).prev().val();
+    	            $(this).prev().val(++count);
+    	            productCount();
+    	        });
+    	        $(".hand").bind("click", function () {
+    	            var count = $(this).next().val();
+    	            var result = count--;
+    	            if (result <= 1) {
+    	                alert("宝贝数量不可以小于1")
+    	                count = 1;
+    	            }
+    	            $(this).next().val(count);
+    	            productCount();
+    	        });
+    	        //04实现删除商品的功能
+    	        //04.1单击删除所选删除商品
+    	        $("#deleteAll").bind("click", function () {
+    	            $("input[name=cartCheckBox]:checked").each(function () {
+    	//04.1单击删除所选删除商品的，以下代码中删除前一个tr的代码不可以去下一句调换位置，否则将找不到所删除的tr
+    	                $(this).parents("tr").prev().remove();//删除前一个tr;
+    	                $(this).parents("tr").remove();//删除当前行
+    	                //删除所有商品后将全选按钮设置成false(取消)
+    	    	        $("#allCheckBox").attr("checked",false);
+    	                //调用计算总价方法
+    	                productCount();
+    	            });
+    	        });
+    	        //04.2删除单个商品
+    	        $(".cart_td_8").find("a").click(function () {
+    	            $(this).parent().parent().prev().remove();//删除前一个tr
+    	            $(this).parent().parent().remove();//删除当前行
+    	            productCount();
+
+    	        });
+    	    });
+    	
+    	
+    </script>
+    
+</head>
+<body>
+<div id="header"><img src="images/taobao_logo.gif" alt="logo" /></div>
+<div id="nav">您的位置：<a href="#">首页</a> &gt; <a href="#">我的淘宝</a> &gt; 我的购物车</div>
+<div id="navlist">
+    <ul>
+        <li class="navlist_red_left"></li>
+        <li class="navlist_red">1. 查看购物车</li>
+        <li class="navlist_red_arrow"></li>
+        <li class="navlist_gray">2. 确认订单信息</li>
+        <li class="navlist_gray_arrow"></li>
+        <li class="navlist_gray">3. 付款到支付宝</li>
+        <li class="navlist_gray_arrow"></li>
+        <li class="navlist_gray">4. 确认收货</li>
+        <li class="navlist_gray_arrow"></li>
+        <li class="navlist_gray">5. 评价</li>
+        <li class="navlist_gray_right"></li>
+    </ul>
+</div>
+
+<div id="content">
+	<form action="" method="post" name="myform">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" id="shopping">        
+            <tr>
+                <td class="title_1"><input id="allCheckBox" type="checkbox" value=""/>全选</td>
+                <td class="title_2" colspan="2">店铺宝贝</td>
+                <td class="title_3">获积分</td>
+                <td class="title_4">单价（元）</td>
+                <td class="title_5">数量</td>
+                <td class="title_6">小计（元）</td>
+                <td class="title_7">操作</td>
+            </tr>
+            <tr>
+                <td colspan="8" class="line"></td>
+            </tr>
+            <tr>
+                <td colspan="8" class="shopInfo">店铺：<a href="#">纤巧百媚时尚鞋坊</a>    卖家：<a href="#">纤巧百媚</a> <img src="images/taobao_relation.jpg" alt="relation" /></td>
+            </tr>
+            <tr id="product1">
+                <td class="cart_td_1"><input name="cartCheckBox" type="checkbox" value="product1"/></td>
+                <td class="cart_td_2"><img src="images/taobao_cart_01.jpg" alt="shopping"/></td>
+                <td class="cart_td_3"><a href="#">日韩流行风时尚美眉最爱独特米字拼图金属坡跟公主靴子黑色</a><br />
+                    颜色：棕色 尺码：37<br />
+                    保障：<img src="images/taobao_icon_01.jpg" alt="icon" /></td>
+                <td class="cart_td_4">5</td>
+                <td class="cart_td_5">138.00</td>
+                <td class="cart_td_6"><img src="images/taobao_minus.jpg" alt="minus" class="hand"/> <input id="num_1" type="text"  value="1" class="num_input" readonly="readonly"/> <img src="images/taobao_adding.jpg" alt="add" class="hand"/></td>
+                <td class="cart_td_7"></td>
+                <td class="cart_td_8"><a href="javascript:void(0);">删除</a></td>
+            </tr>
+
+            <tr>
+                <td colspan="8" class="shopInfo">店铺：<a href="#">香港我的美丽日记</a>    卖家：<a href="#">lokemick2009</a> <img src="images/taobao_relation.jpg" alt="relation" /></td>
+            </tr>
+            <tr id="product2">
+                <td class="cart_td_1"><input name="cartCheckBox" type="checkbox" value="product2" /></td>
+                <td class="cart_td_2"><img src="images/taobao_cart_02.jpg" alt="shopping"/></td>
+                <td class="cart_td_3"><a href="#">chanel/香奈尔/香奈尔炫亮魅力唇膏3.5g</a><br />
+                    保障：<img src="images/taobao_icon_01.jpg" alt="icon" /> <img src="images/taobao_icon_02.jpg" alt="icon" /></td>
+                <td class="cart_td_4">12</td>
+                <td class="cart_td_5">265.00</td>
+                <td class="cart_td_6"><img src="images/taobao_minus.jpg" alt="minus" class="hand"/> <input id="num_2" type="text"  value="1" class="num_input" readonly="readonly"/> <img src="images/taobao_adding.jpg" alt="add" class="hand"/></td>
+                <td class="cart_td_7"></td>
+                <td class="cart_td_8"><a href="javascript:void(0);">删除</a></td>
+            </tr>
+
+            <tr>
+                <td colspan="8" class="shopInfo">店铺：<a href="#">实体经营</a>    卖家：<a href="#">林颜店铺</a> <img src="images/taobao_relation.jpg" alt="relation" /></td>
+            </tr>
+            <tr id="product3">
+                <td class="cart_td_1"><input name="cartCheckBox" type="checkbox" value="product3"/></td>
+                <td class="cart_td_2"><img src="images/taobao_cart_03.jpg" alt="shopping"/></td>
+                <td class="cart_td_3"><a href="#">蝶妆海?蓝清滢粉底液10#（象牙白）</a><br />
+                    保障：<img src="images/taobao_icon_01.jpg" alt="icon" /> <img src="images/taobao_icon_02.jpg" alt="icon" /></td>
+                <td class="cart_td_4">3</td>
+                <td class="cart_td_5">85.00</td>
+                <td class="cart_td_6"><img src="images/taobao_minus.jpg" alt="minus" class="hand"/> <input id="num_3" type="text"  value="1" class="num_input" readonly="readonly"/> <img src="images/taobao_adding.jpg" alt="add" class="hand"/></td>
+                <td class="cart_td_7"></td>
+                <td class="cart_td_8"><a href="javascript:void(0);">删除</a></td>
+            </tr>
+
+            <tr>
+                <td colspan="8" class="shopInfo">店铺：<a href="#">红豆豆的小屋</a>    卖家：<a href="#">taobao豆豆</a> <img src="images/taobao_relation.jpg" alt="relation" /></td>
+            </tr>
+            <tr id="product4">
+                <td class="cart_td_1"><input name="cartCheckBox" type="checkbox" value="product4"/></td>
+                <td class="cart_td_2"><img src="images/taobao_cart_04.jpg" alt="shopping"/></td>
+                <td class="cart_td_3"><a href="#">相宜促销专供 大S推荐 最好用的LilyBell化妆棉</a><br />
+                    保障：<img src="images/taobao_icon_01.jpg" alt="icon" /></td>
+                <td class="cart_td_4">12</td>
+                <td class="cart_td_5">12.00</td>
+                <td class="cart_td_6"><img src="images/taobao_minus.jpg" alt="minus" class="hand"/> <input id="num_4" type="text"  value="2" class="num_input" readonly="readonly"/> <img src="images/taobao_adding.jpg" alt="add" class="hand"/></td>
+                <td class="cart_td_7"></td>
+                <td class="cart_td_8"><a href="javascript:void(0);">删除</a></td>
+            </tr>
+
+            <tr>
+                <td  colspan="3"><a id="deleteAll" href="javascript:void(0);"><img src="images/taobao_del.jpg" alt="delete"/></a></td>
+                <td colspan="5" class="shopend">商品总价（不含运费）：<label id="total" class="yellow"></label> 元<br />
+                    可获积分 <label class="yellow" id="integral"></label> 点<br />
+                    <input name=" " type="image" src="images/taobao_subtn.jpg" /></td>
+            </tr>        
+    	</table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	function CloseAll(){
+	 	var num = confirm('确认关闭吗？');
+		if (num==true) {
+			window.close();
+		}
+		
+	}
+	
+	function Result(){
+		var num = confirm('确认结算吗？');
+		if (num) {
+			alert('购买成功！');
+		}
+	}
+	
+	function Collection(){
+		var num = confirm('移入收藏后将在收藏中显示，是否继续操作？');
+		if (num) {
+			alert('移入成功！');
+		}
+		
+	}
+	
+	function Del(){
+		var num = confirm('确认要删除吗？');
+		if (num) {
+			alert('删除成功！');
+		}
+	}
+
+</script>
+
+
+</head>
+<body>
+
+<input type="button" onclick="CloseAll()" value="关闭">
+<input type="button" onclick="Result()" value="结算">
+<input type="button" onclick="Collection()" value="移入收藏">
+<input type="button" onclick="Del()" value="删除">
+
+</body>
+</html>

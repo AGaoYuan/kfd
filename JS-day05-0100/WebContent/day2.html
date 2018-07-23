@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jQuery1.11.1.js"></script>
+
+<script type="text/javascript">
+	
+	/* $(function(){
+		var dom = document.getElementsByTagName('div')[0];
+		var msg = $(dom).text();
+		alert(msg);
+	}); */
+	
+	
+	/* $(function(){
+		$('li').mouseover(function(){
+			$(this).css("background","pink");
+		}).mouseout(function(){
+			$(this).css("background","");
+		})
+		
+	}); */
+	
+	/* $(function(){
+		var lis = document.getElementsByTagName('li');
+		for (var i = 0; i < lis.length; i++) {
+			lis[i].onmouseover = function(){
+				this.style.background="red";
+			}
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].onmouseout = function(){
+				this.style.background="";
+			}
+		}
+	}); */
+	
+	/* $(function(){
+		$('li:even').css("background","pink");
+	}); */
+	
+	
+	$(function(){
+		var lis = document.getElementsByTagName('li');
+		for (var i = 0; i < lis.length; i++) {
+			if (i%2==0) {
+				this.onmouseover = function(){
+					this.style.backgroundColor="pink";
+				}
+				
+			}
+		} 
+		
+	});
+	
+</script>
+
+</head>
+<body>
+<ul contenteditable="true">
+		<li id="first">新闻资讯</li>
+		<li>体育竞技</li>
+		<li>娱乐八卦</li>
+		<li>前沿科技</li>
+		<li>环球财经</li>
+		<li>天气预报</li>
+		<li>房产家居</li>
+		<li>网络游戏</li>
+   </ul>
+
+</body>
+</html>

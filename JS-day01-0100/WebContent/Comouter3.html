@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function chapter3(){
+	//上级练习3
+	var num1 = prompt('请输入第一个数');
+	var num2 = prompt('请输入第二个数 ');
+	var symbol = prompt('请输入运算符 ');
+	var p1 = parseInt(num1);
+	var p2 = parseInt(num2);
+	switch(symbol){
+	case "+":
+		var reault = p1+p2;
+		alert(num1+"+"+num2+'='+reault);
+		break;
+	case "-":
+		var reault = p1-p2;
+		alert(num1+"-"+num2+'='+reault);
+		break;
+	case "*":
+		var reault = p1*p2;
+		alert(num1+"*"+num2+'='+reault);
+		break;
+	case "/":
+		var reault = p1/p2;
+		alert(num1+"/"+num2+'='+reault);
+		break;
+	}
+	
+}
+chapter3();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

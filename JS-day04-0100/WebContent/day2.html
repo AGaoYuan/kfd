@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>创建对象</title>
+<script type="text/javascript">
+		function Flower(name,genera,area,uses){
+			this.name = name;
+			this.genera = genera;
+			this.area= area;
+			this.uses = uses;
+			this.showName = function(){
+				alert(this.name);
+				
+			}
+			
+		}
+		var flower1 = new Flower("长春花","夹竹桃科","非洲、亚热带、热带、以及中国大陆的华东、西南、中南等地","观赏或用药等")
+		flower1.showName();
+		//alert(flower1 instanceof Flower);
+		
+		var flower2 = new Flower('lll','男','2222','3333');
+		flower2.showName();
+		
+		
+	</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+window.onload = function(){
+	var path=document.referrer;
+	if(path){
+  		var mydiv = document.getElementById('mydiv');
+		
+  		mydiv.style.display="none";
+	}else{
+  		//直接访问领奖
+  		 setInterval(reduceNum,1000);
+  		 
+	}
+	
+}
+
+function reduceNum(){
+	var myspan = document.getElementById('myspan');
+	 var num = myspan.innerHTML;
+	
+ 	if (num>1) {
+		num--;
+		myspan.innerHTML=num;
+		
+	}else{
+		location.href="http://localhost:8080/JS-Day02-0100/day8.html";
+	} 
+	
+}
+
+	
+</script>
+
+</head>
+<body>
+<div id="mydiv" style="line-height:200px;width:200px;height:200px;background:pink;border:1px dashed blue;font-family:'华文行楷';font-size:20px;">
+			<span style="color:red;" id="myspan">5</span>秒后跳转到登陆页面
+	  </div>
+	   我是抽奖页面
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        li {
+            list-style: none;
+            height: 24px;
+        }
+        #show {
+             border: 1px solid red;
+            width: 300px;
+            margin: 0px auto;
+        }
+        #box {
+            height: 192px;
+            width: 200px;
+            border: 1px solid blue;
+            overflow: hidden;
+            
+        }
+    </style>
+    <script src="js/jQuery1.11.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var i = 0;
+			var stop=false;
+            $("#box").scrollTop(i);
+            var myul = $("#box").html();
+            myul += myul;
+            $("#box").html(myul);
+            
+            setInterval(function () {
+				if(stop)
+				return;
+                $("#box").scrollTop(i++);
+                if (i == $("#box").height()) {
+                    i = 0;
+                    $("#box").scrollTop(i);
+                }
+            }, 50);
+			$("#box").mouseover(function(){
+				stop=true;
+			}).mouseout(function(){
+				stop=false;
+			});
+        });
+    </script>
+</head>
+    <body>
+        <div id="show">
+            <div id="box">
+                <ul>
+                    <li>油炸丸子</li>
+                    <li>缺心眼子</li>
+                    <li>鼠标垫子</li>
+                    <li>西施</li>
+                    <li>杨玉环</li>
+                    <li>貂蝉</li>
+                    <li>曾轶可</li>
+                    <li>凤姐</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

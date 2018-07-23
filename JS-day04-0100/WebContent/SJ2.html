@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Person(){
+		
+	}
+	Person.prototype.Name = '郎晓明';
+	Person.prototype.Age = 38;
+	Person.prototype.job = '歌手';
+	Person.prototype.Address = '中国北京海淀区';
+	
+	Person.prototype.showInfo = function(){
+		alert(this.Name+"\n"+this.Age+"\n"+this.job+"\n"+this.Address);
+	}
+	
+	var person = new Person();
+	person.showInfo();
+	
+	
+	
+</script>
+
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	
+	function selColor(){
+		var color = Array('红色','黄色','蓝色','橙色');
+		var num = Math.ceil(Math.random()*7)-1;
+		document.write(color[num]);
+	}
+	
+	
+</script>
+
+</head>
+<body>
+<div>
+	本次选择的颜色是：<span id="color"></span>
+	<input type="button" value="选择颜色" onclick="selColor();"/>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	function myrefresh(){
+		history.go(0);
+		
+	}
+	
+	function myisCon(){
+		var result = confirm('确定删除吗？');
+		if (result) {
+			alert('删除成功');
+		}else{
+			alert('拜拜');
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+
+<input type="button" onclick="myisCon()" value="判断" />
+<input type="button" onclick="myrefresh()" value="看着办"/>
+	
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>根据时间问好</title>
+
+<script type="text/javascript">
+function chapter2(){
+	//上级练习2
+	var num1 = prompt('请输入第时间：','');
+	var s1 = parseInt(num1);
+	var s2 = isNaN(num1);
+	if (s2) {
+		alert('您输入的有误！ ');
+	}else{
+		if (s1>=6&& s1<=12) {
+			document.write('上午好！欢迎来到贵美。');
+			for (var i = 0; i <10; i++) {
+				document.write('(艹皿艹 )');
+			}
+		}else if(s1>=13&& s1<=17){
+			document.write('下午好 ！欢迎来到贵美。');
+			for (var i = 0; i <10; i++) {
+				document.write('∑');
+			}
+	}else {
+		document.write('熬夜,早晚猝死你 ！');
+	}	
+	}
+}
+chapter2();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
