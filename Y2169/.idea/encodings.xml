@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/01Mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/01Mybatis/src/main/java/cn/happy/dao/UserInfoMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/01Mybatis/src/main/java/cn/happy/test/TestUserInfoMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/01Mybatis/src/test/java/cn/happy/test/TestBufferedReader.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02School" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02Spring" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/04SpringMvc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BookManager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBCheck" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SMBMS" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/School" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kfd_SpringBoot_Demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kfd_day01_Springboot_mvc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kfd_day01_java_Tomcat" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

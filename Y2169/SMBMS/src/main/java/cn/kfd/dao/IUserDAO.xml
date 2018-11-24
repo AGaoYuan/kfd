@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kfd.dao.IUserDAO">
+
+    <sql id="columns">
+        id, userCode, userName, userPassword,
+        gender, birthday, phone, address,
+         userRole, createdBy, creationDate
+    </sql>
+
+    <!--验证登录-->
+    <select id="getUser" resultType="SmbmsUser">
+        SELECT <include refid="columns"></include> FROM smbms_user
+        <where>
+            <if test="userCode!=null">
+                userCode = #{userCode}
+            </if>
+            <if test="userPassword!=null">
+                AND userPassword = #{userPassword}
+            </if>
+        </where>
+    </select>
+
+    <select id="findAllUser" resultType="SmbmsUser">
+        SELECT smbms_user.*, YEAR(NOW())-YEAR(birthday) AS age FROM smbms_user
+    </select>
+
+    <select id="updateFindUser" resultType="SmbmsUser">
+        SELECT <include refid="columns"></include> FROM smbms_user WHERE id = #{uid}
+    </select>
+
+    <!--模糊查询-->
+    <select id="findLikeUser" resultType="SmbmsUser">
+        SELECT smbms_user.*, YEAR(NOW())-YEAR(birthday) AS age FROM smbms_user WHERE userName LIKE '%' #{userName} '%'
+    </select>
+
+
+    <update id="updateUser">
+        UPDATE smbms_user SET userName=#{userName},gender=#{gender},birthday=#{birthday},phone=#{phone},address=#{address},userRole=#{userRole}
+        WHERE id = #{id};
+    </update>
+
+    <insert id="SaveUser">
+        INSERT INTO smbms_user(userCode,userName,userPassword,gender,birthday,phone,address,userRole)
+        VALUES(#{userCode},#{userName},#{userPassword},#{gender},#{birthday},#{phone},#{address},#{userRole});
+    </insert>
+
+    <delete id="deleteUser">
+        DELETE FROM smbms_user WHERE id=#{id}
+    </delete>
+
+
+</mapper>

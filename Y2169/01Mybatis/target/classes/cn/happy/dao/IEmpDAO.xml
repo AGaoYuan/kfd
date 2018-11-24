@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.happy.dao.IEmpDAO">
+
+	<resultMap id="EmpMapper" type="Emp">
+		<id column="empno" property="deptno"></id>
+		<result column="empname" property="empname"></result>
+		<association property="dept" javaType="Dept">
+			<id column="deptno" property="deptno"></id>
+			<result column="deptname" property="deptname"></result>
+		</association>
+	</resultMap>
+
+
+	<!--多条SQL的方案 BEGIN-->
+	<resultMap id="EmpMapperMultiSQL" type="Emp">
+		<id column="empno" property="deptno"></id>
+		<result column="empname" property="empname"></result>
+		<association property="dept" javaType="Dept" select="getDeptByDeptNo" column="deptno">
+		</association>
+	</resultMap>
+	<!--END-->
+
+	<!-- 获取所有部门和员工  单挑SQL-->
+	<select id="getEmpByNo" resultMap="EmpMapper">
+		SELECT * FROM dept,emp
+		WHERE dept.deptno = emp.deptno
+		AND empno = #{empno}
+	</select>
+
+
+
+	<!--多条SQL的  BEGIN-->
+	<select id="getDeptByDeptNo" resultType="Dept">
+		SELECT * FROM dept
+		WHERE deptno = #{deptno}
+	</select>
+
+	<!-- 获取所有部门和员工 -->
+	<select id="getEmpMultiSQL" resultMap="EmpMapperMultiSQL">
+		SELECT * FROM emp
+		WHERE empno = #{empno}
+	</select>
+	<!--END-->
+
+
+</mapper>

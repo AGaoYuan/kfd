@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--类型约束     Schema  dtd-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration><!--配置文件的根节点  ，一个xml中的根节点只能有一个 -->
+    <!--引入一个节点-->
+   <properties resource="jdbc.properties"></properties>
+
+
+    <typeAliases>
+    <!--  <typeAlias type="cn.mybatis.day01base.entity.Movie" alias="Movie"></typeAlias>-->
+        <package name="cn.school.entity"></package>
+    </typeAliases>
+    <environments default="mysql">  <!--环境：-->
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>  <!--事务管理器：JDBC-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--关联小配置-->
+    <mappers>
+        <mapper resource="cn/school/dao/IUserInfoDAO.xml"/>
+    </mappers>
+
+
+</configuration>

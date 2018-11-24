@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<bean id="dao" class="cn.spring.day04aop.dao.HelloDAOImpl">
+</bean>
+
+<bean id="service" class="cn.spring.day04aop.service.HelloServiceImpl">
+    <property name="dao" ref="dao"></property>
+</bean>
+
+<!--通知需要配置-->
+    <bean id="beforeAdvice" class="cn.spring.day04aop.aop.LoggerBefore">
+    </bean>
+
+    <bean id="AfterAdvice" class="cn.spring.day04aop.aop.LoggerAfter">
+    </bean>
+    
+    <!--配置AOP-->
+    <aop:config>
+        <!--指定包下的增强 public可省略 -->
+        <aop:pointcut id="mypoint" expression="execution(* *..service.*.*(..))"></aop:pointcut>
+        <!--前置增强的配置-->
+        <aop:advisor advice-ref="beforeAdvice" pointcut-ref="mypoint"></aop:advisor>
+        <!--后置增强的配置-->
+        <aop:advisor advice-ref="AfterAdvice" pointcut-ref="mypoint"></aop:advisor>
+    </aop:config>
+    
+</beans>

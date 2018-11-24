@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>添加会议主持人_纪要人</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+function makeValue()
+{
+	document.getElementById("dept").options.length=0;
+	if(document.getElementById("select").value==1)
+	{
+		document.getElementById("dept").options.length=0;
+		document.getElementById("dept").options.add(new Option("张三","张三")); 
+		document.getElementById("dept").options.add(new Option("李四","李四")); 
+		document.getElementById("dept").options.add(new Option("王五","王五")); 
+	}
+	if(document.getElementById("select").value==2)
+	{
+		document.getElementById("dept").options.length=0;
+		document.getElementById("dept").options.add(new Option("小李","小李")); 
+		document.getElementById("dept").options.add(new Option("小王","小王")); 
+		document.getElementById("dept").options.add(new Option("小猪","小猪")); 
+	}
+}
+function selectPerson()
+{
+	document.getElementById("txtName").value=document.getElementById("dept").options.value;
+}
+function clickOk()
+{
+	var name=document.getElementById("txtName").value;
+	if(name==null || name=="")
+	{
+		alert('请填写会议主持人');
+		document.getElementById("txtName").focus();
+		return false;
+	}
+	window.returnValue = name;
+	window.close();
+}
+</script>
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="2%" valign="middle" background="../../images/bg_03.gif">&nbsp;</td>
+    <td width="2%" valign="middle" background="../../images/bg_03.gif"><img src="../../images/main_28.gif" width="9" height="9" align="absmiddle"></td>
+    <td height="30" valign="middle" background="../../images/bg_03.gif"><div align="left"><font color="#FFFFFF">添加会议主持人</font></div></td>
+  </tr>
+</table><br>
+<table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="td_page"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+			<td width="15%" height="30"><div align="center">部门选择&nbsp;</div></td>
+          <td height="30"><span class="style4">
+            <select name="select" id="select" class="box" style="width:170px " onChange="makeValue()">
+              <option value="0" selected>部门选择</option>
+              <option value="1">人事部</option>
+              <option value="2">工程部</option>
+            </select>
+          </span></td>
+        </tr>
+        <tr>
+			<td><div align="center"></div></td>
+          <td><select name="selectBasRight" size="16" style="width:95% " id="dept" onChange="selectPerson()">
+          </select></td>
+        </tr>
+        <tr>
+          <td height="30"><div align="center">会议主持人</div></td>
+          <td><input name="txtName" type="text" class="input" id="txtName" style="width:95% "></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+<table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="td_page">
+      <div align="center">
+        <input name="Submit" type="button" class="buttonface02" value="  确认  " onClick="clickOk()">
+        &nbsp;
+        <input name="Submit" type="button" class="buttonface02" value="  关闭  " onClick="window.close()">
+      </div></td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>用户赋权及修改</title>
+<link href="../../../css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+function save()
+{
+	alert('角色赋权成功！');
+}
+function windowOpen(theURL,winName,features,width,hight,scrollbars,top,left) 
+{
+  var parameter="top="+top+",left="+left+",width="+width+",height="+hight;
+  if(scrollbars=="no")
+ {parameter+=",scrollbars=no";}
+  else
+ {parameter+=",scrollbars=yes";}
+  window.open(theURL,winName,parameter);
+}
+</script>
+</head>
+
+<body>
+<table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="2%" valign="middle" background="../../../images/bg_03.gif">&nbsp;</td>
+    <td width="2%" valign="middle" background="../../../images/bg_03.gif"><img src="../../../images/main_28.gif" width="9" height="9" align="absmiddle"></td>
+    <td height="30" valign="middle" background="../../../images/bg_03.gif"><font color="#FFFFFF">角色管理</font></td>
+  </tr>
+</table>
+<br>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="right" class="td_page_blue"><input name="Submit" type="button" class="buttonface02" onClick="save()" value="  保存  ">
+        <input name="Submit" type="submit" class="buttonface02" onClick="location.href='用户赋权.htm'" value="  返回  "></td>
+  </tr>
+</table><br>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="right" class="td_page_blue"><div align="center">
+      <table width="95%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="15%" height="30"><div align="center">登录名</div></td>
+          <td><div align="left">
+            <input name="textfield" type="text" class="input" style="width:60% " value="立冬">
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">角色信息</div></td>
+          <td><div align="left">
+            <textarea name="textfield" rows="8" class="box" style="width:60% " readonly="true">系统管理员</textarea>            
+            <span class="td_form02">
+              <input type=button name=button class="buttonface02" value="  选择  " onClick="windowOpen('（用户赋权）分配角色.htm','','','450','270','no','200','200')">
+              </span>
+              <input name="Submit2" type="submit" class="buttonface02" value="清除角色">
+          </div></td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table><br>
+<table width="95%"  border="0" cellpadding="0" cellspacing="0" class="table02" align="center">
+  <tr>
+    <td width="37%" align="right"><div align="left"></div></td>
+    <td width="63%" height="30" align="right"><img src="../../images/1.gif" width="4" height="5" align="absmiddle"> 首页　 <img src="../../images/2.gif" width="3" height="5" align="absmiddle"> 上一页　 <img src="../../images/2-2.gif" width="3" height="5" align="absmiddle"> 下一页　 <img src="../../images/3.gif" width="4" height="5" align="absmiddle"> 末页　　共 1 页 1 条记录</td>
+  </tr>
+</table>
+<table width="95%" border="0" align="center" cellpadding="2" cellspacing="0" class="table01">
+  <tr>
+    <td width="20%" class="td_top">角色名称</td>
+    <td class="td_top">拥有权限</td>
+  </tr>
+  <tr>
+    <td class="td_01">系统管理员</td>
+    <td class="td_01"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+        </tr>
+        <tr>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_02">普通人员</td>
+    <td class="td_02"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+        </tr>
+        <tr>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_01">出国办事员</td>
+    <td class="td_01"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+        </tr>
+        <tr>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_02">档案管理员</td>
+    <td class="td_02"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+        </tr>
+        <tr>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+          <td height="30">xxx权限</td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

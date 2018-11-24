@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<school> 
+  <class name="1年级" address="1楼"> 
+    <student name="小黑" age="12"/>  
+    <student name="小白" age="15"/> 
+  </class>  
+  <class name="2年级" address="2楼"> 
+    <student name="小黑黑" age="13"/>  
+    <student name="小白白" age="14"/> 
+  </class>  
+  <class name="三年级" address="三楼">
+    <student name="小红" age="18"/>
+  </class>
+</school>

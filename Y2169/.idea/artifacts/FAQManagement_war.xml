@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FAQManagement:war">
+    <output-path>$PROJECT_DIR$/FAQManagement/target</output-path>
+    <root id="archive" name="FAQManagement.war">
+      <element id="artifact" artifact-name="FAQManagement:war exploded" />
+    </root>
+  </artifact>
+</component>

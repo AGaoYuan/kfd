@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>会议室管理</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/checkAll.js"></script>
+<script language="javascript" src="../../js/clientSideApp.js"></script>
+<SCRIPT language=JavaScript type=text/JavaScript>
+function queding()
+{
+	var str = confirm("确定删除吗？");
+	if(str == true)
+	{
+		alert("删除成功！");
+	}
+	else
+	{
+		alert("取消删除！");
+	}
+
+
+}
+function windowOpen(theURL,winName,features,width,hight,scrollbars,top,left) 
+{
+  var parameter="top="+top+",left="+left+",width="+width+",height="+hight;
+  if(scrollbars=="no")
+ {parameter+=",scrollbars=no";}
+  else
+ {parameter+=",scrollbars=yes";}
+  window.open(theURL,winName,parameter);
+}
+function DelRecord (nPageNo, strCode)
+{
+        if (!confirm ("是否删除指定通知？"))
+                return;
+
+        this.location = "/perpub/qrysend/q2.php??tt1=&tt2=&tt3=&cc1=&cc2="
+                + "&pageno=" + nPageNo
+                + "&code=;" + strCode + ";";
+}
+
+</SCRIPT>
+<style type="text/css">
+<!--
+.style1 {color: #000033}
+-->
+</style>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<form>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="25" align="center" valign="bottom" class="td06"> <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="2%" valign="middle" background="../../images/bg_03.gif">&nbsp;</td>
+        <td width="2%" valign="middle" background="../../images/bg_03.gif"><img src="../../images/main_28.gif" width="9" height="9" align="absmiddle"></td>
+        <td height="30" valign="middle" background="../../images/bg_03.gif"><div align="left"><font color="#FFFFFF">会议室修改</font></div></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="td_page">
+  <tr>
+    <td>
+      <div align="center">
+        <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20%" height="30"><div align="center">会议室名称</div></td>
+            <td><input name="textfield2" type="text" class="input" style="width:95% " value="会议室1"></td>
+            <td width="20%" rowspan="3" align="center"><table width="180" height="150"  border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td height="128"><div align="center"><img src="../../images/DocumentIcon.gif" width="101" height="128"></div></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="30"><div align="center">会议室描述</div></td>
+            <td><textarea name="textfield3" rows="6" class="box" style="width:95% "></textarea></td>
+            </tr>
+          <tr>
+            <td height="30"><div align="center">会议室照片</div></td>
+            <td><input name="textfield4" type="file" class="input" style="width:95% "></td>
+            </tr>
+        </table></div></td>
+  </tr>
+</table>
+<br>
+ <table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <td class="td_page">        
+        <div align="center">
+          <input name="Submit" type="submit" class="buttonface02" value="  保存  " onClick="openwin2('添加联系人.htm')">
+&nbsp;          
+<input name="Submit2" type="reset" class="buttonface02" value="  重置  ">     
+        </div></td>
+   </tr>
+ </table>
+ <br>
+</form>
+</body>
+</html>

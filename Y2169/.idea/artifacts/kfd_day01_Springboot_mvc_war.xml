@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kfd_day01_Springboot_mvc:war">
+    <output-path>$PROJECT_DIR$/kfd_day01_Springboot_mvc/target</output-path>
+    <root id="archive" name="kfd_day01_Springboot_mvc.war">
+      <element id="artifact" artifact-name="kfd_day01_Springboot_mvc:war exploded" />
+    </root>
+  </artifact>
+</component>

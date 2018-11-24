@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MbDemo01:war">
+    <output-path>D:/应用程序/腾讯QQ/保存数据文件夹/2105328651/FileRecv/MbDemo01/target</output-path>
+    <root id="archive" name="MbDemo01-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="MbDemo01:war exploded" />
+    </root>
+  </artifact>
+</component>

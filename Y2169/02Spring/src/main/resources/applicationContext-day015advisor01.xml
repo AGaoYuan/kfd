@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--目标类型-->
+    <bean id="service" class="cn.spring.day14advisor01.SomeServiceImpl"></bean>
+    <!--增强类-->
+    <bean id="beforeAdvice" class="cn.spring.day14advisor01.BeforeAdvice"></bean>
+
+    <!--顾问包装通知-->
+    <bean id="advisor" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+        <!--引用增强-->
+        <property name="advice" ref="beforeAdvice"></property>
+        <!--进行筛选，留下匹配成功的方法-->
+        <property name="mappedNames" value="*do*"></property>
+    </bean>
+
+    <!--代理工厂 bean 自己也是bean 中和 调度 目标类型和增强-->
+    <bean id="proxyService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!--目标对象-->
+        <property name="target" ref="service"></property>
+        <!--增强类型，顾问可以包装通知-->
+        <property name="interceptorNames" value="advisor"></property>
+    </bean>
+
+
+
+</beans>

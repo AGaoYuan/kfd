@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--每一个javaBean都是一个节点-->
+
+<bean id="service" class="cn.spring.day01.HappyService">
+    <property name="info" value="Hello Spring"></property>
+    <property name="age" value="13"></property>
+</bean>
+
+    <!--墨盒-->
+    <bean id="ink" class="cn.spring.day03printer.ink.ColorInk">
+    </bean>
+
+    <!--纸张-->
+    <bean id="paper" class="cn.spring.day03printer.paper.A4Paper"></bean>
+
+    <!--打印机-->
+    <bean id="printer" class="cn.spring.day03printer.printer.Printer">
+        <property name="ink" ref="ink"></property>
+        <property name="paper" ref="paper"></property>
+    </bean>
+
+</beans>

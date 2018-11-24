@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="PBCheck:war">
+    <output-path>$PROJECT_DIR$/PBCheck/target</output-path>
+    <root id="archive" name="PBCheck.war">
+      <element id="artifact" artifact-name="PBCheck:war exploded" />
+    </root>
+  </artifact>
+</component>

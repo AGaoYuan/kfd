@@ -1,0 +1,37 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="kfd_day01_Springboot_mvc:war exploded">
+    <output-path>$PROJECT_DIR$/kfd_day01_Springboot_mvc/target/kfd_day01_Springboot_mvc</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="kfd_day01_Springboot_mvc" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.5.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jasper:8.5.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:8.5.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.5.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jsp-api:8.5.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-el-api:8.5.16" />
+          <element id="library" level="project" name="Maven: org.eclipse.jdt:ecj:3.12.3" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jasper-el:8.5.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-api:8.5.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util-scan:8.5.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util:8.5.16" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.4.RELEASE" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/kfd_day01_Springboot_mvc/target/kfd_day01_Springboot_mvc/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="kfd_day01_Springboot_mvc/web/Web" />
+    </root>
+  </artifact>
+</component>

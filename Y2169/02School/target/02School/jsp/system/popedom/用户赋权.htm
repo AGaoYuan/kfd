@@ -1,0 +1,186 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>用户管理</title>
+<link href="../../../css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" language="JavaScript1.2" src="../../../js/stm31.js"></script>
+<script>
+function windowOpen(theURL,winName,features,width,hight,scrollbars,top,left) 
+{
+  var parameter="top="+top+",left="+left+",width="+width+",height="+hight;
+  if(scrollbars=="no")
+ {parameter+=",scrollbars=no";}
+  else
+ {parameter+=",scrollbars=yes";}
+  window.open(theURL,winName,parameter);
+}
+</script>
+<SCRIPT language=JavaScript type=text/JavaScript>
+
+function selectAllByChk(chk,checkbox) {     
+	var size = checkbox.length;
+    if(size == null)
+        checkbox.checked =chk.checked;
+    else{
+        for (i = 0; i < checkbox.length; i++) {
+            checkbox[i].checked =chk.checked;
+        }
+	}
+}
+function queding()
+{
+	var str=confirm("确定分配管理员权限吗？");
+	if(str==true)
+	{
+		alert('角色分配成功！');
+	}
+}
+function openwin(url)
+{
+window.open (url, "look", "height=500, width=500, toolbar=no, menubar=no, scrollbars=yes,resizable=yes, location=no, status=no");
+
+}
+
+</SCRIPT>
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<center>
+  
+  <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="2%" valign="middle" background="../../../images/bg_03.gif">&nbsp;</td>
+      <td width="2%" valign="middle" background="../../../images/bg_03.gif"><img src="../../../images/main_28.gif" width="9" height="9" align="absmiddle"></td>
+      <td height="30" valign="middle" background="../../../images/bg_03.gif"><font color="#FFFFFF">用户权限管理</font></td>
+    </tr>
+  </table>
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <form action="">
+  <tr>
+    <td align="center"><br>    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="table01">
+          <tr>
+            <td class="td_02"><SPAN class=td_title>用户查询</SPAN></td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="10%" class="td_02">部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门</td>
+            <td width="40%" class="td_02"><select name="select" class="box" style="width:95% ">
+              <option value="全部" selected>全部</option>
+              <option value="人事部">人事部</option>
+              <option value="工程部">工程部</option>
+            </select></td>
+            <td width="10%" class="td_02">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务</td>
+            <td class="td_02"><select name="select" class="box" style="width:95% ">
+              <option value="0" selected>--请选择--</option>
+              <option value="1">部门经理</option>
+                                    </select></td>
+          </tr>
+          <tr>
+            <td class="td_02">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+            <td class="td_02"><input name="queryName32" type="text" id=queryName3 next=15 class="input" style="width:95% "></td>
+            <td class="td_02">&nbsp;</td>
+			<td class="td_02"><input name="simple22" type="button"  id=simple2  next=20   class="buttonface02" value="  查询  "  ></td>
+          </tr>
+        </table>        
+    <br>
+      <table width="95%"  border="0" cellspacing="1" cellpadding="0">
+        <tr>
+          <td align="right" class="td_page"><input name="Submit" type="button" class="buttonface" onClick="windowOpen('（用户赋权）分配角色.htm','','','450','270','no','200','200')" value="分配角色">              </td>
+          </tr>
+        </table>
+        <table width="95%"  border="0" cellpadding="0" cellspacing="0" class="table02" align="center">
+          <tr>
+            <td height="30" align="right"><img src="../../../images/1.gif" width="4" height="5" align="absmiddle"> 首页　 <img src="../../../images/2.gif" width="3" height="5" align="absmiddle"> 上一页　 <img src="../../../images/2-2.gif" width="3" height="5" align="absmiddle"> 下一页　 <img src="../../../images/3.gif" width="4" height="5" align="absmiddle"> 末页　　共 1 页 1 条记录</td>
+          </tr>
+        </table>
+        <table width="95%" border="0" cellpadding="2" cellspacing="0" class="table01">
+          <tr>
+            <td class="td_top"><input name="chk" type="checkbox" id="chk" onClick="selectAllByChk(chk,checkbox)" value="checkbox0"></td>
+            <td class="td_top">姓名</td>
+            <td class="td_top">部门</td>
+            <td class="td_top">性别</td>
+            <td class="td_top">出生日期</td>
+            <td class="td_top">职务级别</td>
+            <td width="8%" class="td_top">查看权限</td>
+          </tr>
+          <tr>
+            <td class="td_01"><input type="checkbox" name="checkbox" value="checkbox"></td>
+            <td class="td_01"><a href="&#29992;&#25143;&#36171;&#26435;&#21450;&#20462;&#25913;.htm">李董</a></td>
+            <td class="td_01">人事部</td>
+            <td class="td_01">男</td>
+            <td class="td_01">1972-10-20</td>
+            <td class="td_01">主任科员</td>
+            <td class="td_01"><a href="#"  onClick="openwin('查看用户权限.htm')">查看权限</a></td>
+          </tr>
+          <tr>
+            <td class="td_02"><input type="checkbox" name="checkbox" value="checkbox"></td>
+            <td class="td_02"><a href="modifyinfo.htm">王峰</a></td>
+            <td class="td_02">管理信息部</td>
+            <td class="td_02">男</td>
+            <td class="td_02">1972-11-14</td>
+            <td class="td_02">主任科员</td>
+            <td class="td_02"><a href="#"  onClick="openwin('查看用户权限.htm')">查看权限</a></td>
+          </tr>
+          <tr>
+            <td class="td_01"><input type="checkbox" name="checkbox" value="checkbox"></td>
+            <td class="td_01"><a href="modifyinfo.htm">江碧</a></td>
+            <td class="td_01">法律部</td>
+            <td class="td_01">男</td>
+            <td class="td_01">1960-05-06</td>
+            <td class="td_01">处长</td>
+            <td class="td_01"><a href="#"  onClick="openwin('查看用户权限.htm')">查看权限</a></td>
+          </tr>
+          <tr>
+            <td class="td_02"><input type="checkbox" name="checkbox" value="checkbox"></td>
+            <td class="td_02"><a href="modifyinfo.htm">张鹏</a></td>
+            <td class="td_01">人事部</td>
+            <td class="td_02">男</td>
+            <td class="td_02">1969-07-01</td>
+            <td class="td_02">处长</td>
+            <td class="td_02"><a href="#"  onClick="openwin('查看用户权限.htm')">查看权限</a></td>
+          </tr>
+          <tr>
+            <td class="td_01"><input type="checkbox" name="checkbox" value="checkbox"></td>
+            <td class="td_01"><a href="modifyinfo.htm">李丽</a></td>
+            <td class="td_02">管理信息部</td>
+            <td class="td_01">女</td>
+            <td class="td_01">1974-10-14</td>
+            <td class="td_01">科员</td>
+            <td class="td_01"><a href="#"  onClick="openwin('查看用户权限.htm')">查看权限</a></td>
+          </tr>
+          <tr>
+            <td class="td_02"><input type="checkbox" name="checkbox" value="checkbox"></td>
+            <td class="td_02"><a href="modifyinfo.htm">欧阳小强</a></td>
+            <td class="td_01">法律部</td>
+            <td class="td_02">男</td>
+            <td class="td_02">1977-09-08</td>
+            <td class="td_02">科员</td>
+            <td class="td_02"><a href="#"  onClick="openwin('查看用户权限.htm')">查看权限</a></td>
+          </tr>
+          <tr>
+            <td class="td_01"><input type="checkbox" name="checkbox" value="checkbox"></td>
+            <td class="td_01"><a href="modifyinfo.htm">刘宇</a></td>
+            <td class="td_01">法律部</td>
+            <td class="td_01">男</td>
+            <td class="td_01">1977-09-18</td>
+            <td class="td_01">科员</td>
+            <td class="td_01"><a href="#"  onClick="openwin('查看用户权限.htm')">查看权限</a></td>
+          </tr>
+          <tr>
+            <td class="td_02"><input type="checkbox" name="checkbox" value="checkbox"></td>
+            <td class="td_02"><a href="modifyinfo.htm">吴华</a></td>
+            <td class="td_02">管理信息部</td>
+            <td class="td_02">女</td>
+            <td class="td_02">1979-09-08</td>
+            <td class="td_02">办事员</td>
+            <td class="td_02"><a href="#"  onClick="openwin('查看用户权限.htm')">查看权限</a></td>
+          </tr>
+          </table>
+        </td></tr>
+  </form>
+</table>
+</center>
+</body>
+</html>

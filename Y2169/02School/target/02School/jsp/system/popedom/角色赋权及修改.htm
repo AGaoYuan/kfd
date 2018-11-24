@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>角色赋权及修改</title>
+<link href="../../../css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+function save()
+{
+	alert('角色赋权成功！');
+}
+</script>
+</head>
+
+<body>
+<table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="2%" valign="middle" background="../../../images/bg_03.gif">&nbsp;</td>
+    <td width="2%" valign="middle" background="../../../images/bg_03.gif"><img src="../../../images/main_28.gif" width="9" height="9" align="absmiddle"></td>
+    <td height="30" valign="middle" background="../../../images/bg_03.gif"><font color="#FFFFFF">角色管理</font></td>
+  </tr>
+</table>
+<br>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="right" class="td_page_blue"><input name="Submit" type="button" class="buttonface02" onClick="save()" value="  保存  ">
+        <input name="Submit" type="submit" class="buttonface02" onClick="location.href='角色管理.htm'" value="  返回  "></td>
+  </tr>
+</table><br>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="right" class="td_page_blue"><div align="center">
+      <table width="95%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="15%" height="30"><div align="center">角色名称</div></td>
+          <td><input name="textfield" type="text" class="box" style="width:90% " value="系统管理员"></td>
+        </tr>
+        <tr>
+          <td><div align="center">角色描述</div></td>
+          <td><textarea name="textfield" rows="8" class="box" style="width:90% ">系统管理</textarea></td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table><br>
+<table width="95%" border="0" align="center" cellpadding="2" cellspacing="0" class="table01">
+  <tr>
+    <td width="15%" class="td_top">模块名称</td>
+    <td width="10%" class="td_top">全选</td>
+    <td class="td_top">权限</td>
+  </tr>
+  <tr>
+    <td class="td_01">会议管理</td>
+    <td class="td_01"><input type="checkbox" name="checkbox" value="checkbox"></td>
+    <td class="td_01"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+        </tr>
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_02">新闻管理</td>
+    <td class="td_02"><input type="checkbox" name="checkbox9" value="checkbox"></td>
+    <td class="td_02"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+        </tr>
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox3" value="checkbox"></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_01">日程管理</td>
+    <td class="td_01"><input type="checkbox" name="checkbox10" value="checkbox"></td>
+    <td class="td_01"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+        </tr>
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox4" value="checkbox"></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_02">通讯录</td>
+    <td class="td_02"><input type="checkbox" name="checkbox11" value="checkbox"></td>
+    <td class="td_02"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+        </tr>
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox5" value="checkbox"></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_02">人事管理</td>
+    <td class="td_02"><input type="checkbox" name="checkbox12" value="checkbox"></td>
+    <td class="td_02"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+        </tr>
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox6" value="checkbox"></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_02">系统管理</td>
+    <td class="td_02"><input type="checkbox" name="checkbox13" value="checkbox"></td>
+    <td class="td_02"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+        </tr>
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox7" value="checkbox"></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="td_02">流程管理</td>
+    <td class="td_02"><input type="checkbox" name="checkbox14" value="checkbox"></td>
+    <td class="td_02"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+        </tr>
+        <tr>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+          <td height="30"><input type="checkbox" name="checkbox8" value="checkbox"></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

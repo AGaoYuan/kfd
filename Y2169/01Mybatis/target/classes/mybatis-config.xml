@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入配置文件 -->
+    <!--<properties resource="database.properties"/>-->
+    <properties resource="database.properties">
+        <property name="jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbc.url" value="jdbc:mysql:///newss2230"/>
+        <property name="jdbc.username" value="root"/>
+        <property name="jdbc.password" value="root"/>
+    </properties>
+
+    <settings>
+        <setting name="autoMappingBehavior" value="PARTIAL"/><!--三种映射级别 NONE  PARTIAL  FULL-->
+        <!--设置延迟加载总开关-->
+        <setting name="lazyLoadingEnabled" value="false"></setting>
+        <!--设置是否做侵入式延迟加载，true为开启，false为深度延迟-->
+        <setting name="aggressiveLazyLoading" value="true"></setting>
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="false"></setting>
+    </settings>
+    
+    <!-- 设置log4j记录日志 -->
+   <!-- <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>-->
+
+    <!-- 给返回值类型设置别名  (默认为类的全名称)  -->
+    <typeAliases>
+        <!-- <typeAlias alias="UserInfo" type="cn.news.entity.UserInfo"/> -->
+        <package name="cn.happy.entity"/>
+    </typeAliases>
+
+    <!-- 配置数据源  运行环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 引入mapper.xml文件 -->
+    <mappers>
+        <package name="cn.happy.dao"></package>
+        <!--<mapper resource="cn/happy/dao/UserInfoMapper.xml"/>-->
+        <!-- <mapper url="file:///D:/上课使用/Java/S2230/workspace/News/src/cn/news/dao/userinfo/UserInfoMapper.xml"/> -->
+    </mappers>
+
+
+</configuration>

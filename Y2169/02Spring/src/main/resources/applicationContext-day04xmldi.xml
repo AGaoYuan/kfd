@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--<bean id="stu" class="cn.spring.day05xmldi.Student">
+    <constructor-arg index="0" value="小黑"></constructor-arg>
+    <constructor-arg index="1" value="21"></constructor-arg>
+</bean>-->
+
+    <bean id="car" class="cn.spring.day05xmldi.Car">
+        <property name="color" value="黄色"></property>
+        <property name="brand" value="法拉利"></property>
+    </bean>
+
+    <!--autowire="byName" byType为全局装配  byName为指定类中的域属性进行装配 id名和属性名一致 设置为自动装配-->
+<bean id="stu" class="cn.spring.day05xmldi.Student" p:name="小黑" p:age="12" autowire="byName">
+</bean>
+
+
+
+
+    <bean id="collection" class="cn.spring.day05xmldi.MyCollection">
+        <property name="array">
+            <array>
+                <value>金</value>
+                <value>陈</value>
+                <value>高</value>
+            </array>
+        </property>
+
+        <property name="list">
+            <list>
+                <value>金</value>
+                <value>陈</value>
+                <value>高</value>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>金</value>
+                <value>陈</value>
+                <value>高</value>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="1">
+                    <value>金</value>
+                </entry>
+                <entry key="2">
+                    <value>陈</value>
+                </entry>
+                <entry key="3">
+                    <value>高</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="k1">金</prop>
+                <prop key="k2">陈</prop>
+                <prop key="k3">高</prop>
+            </props>
+        </property>
+
+    </bean>
+
+    
+</beans>

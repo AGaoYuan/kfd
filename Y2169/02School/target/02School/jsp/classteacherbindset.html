@@ -1,0 +1,121 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>绑定设置</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/layer/theme/default/layer.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.tagsinput.css">
+  <style type="text/css">
+    body{
+      font-size: 15px;
+    }
+     .button {
+         background-color: #4CAF50; /* Green */
+         border: none;
+         color: white;
+         padding: 15px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         cursor: pointer;
+         -webkit-transition-duration: 0.4s; /* Safari */
+         transition-duration: 0.4s;
+     }
+    .button2:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    </style>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../js/tree.js"></script>
+
+    <!--Layer弹层 js-->
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/jquery.tagsinput.js"></script>
+    <script type="text/javascript">
+        function addTeacher(uname,uid) {
+            alert(uid);
+            $("#tags_1").addTag(uname);
+        }
+        $(function () {
+            $.ajax({
+                url:'/UserInfoServlet/findUserAll',
+                type:"post",
+                success:function (data) {
+                    var obj=eval(data);
+                    $(obj).each(function (index){
+                        var val=obj[index];
+                        $("#list-context").append(
+                            "<tr><td class='td07' align='center'>"+val.uname+"</td><td align='center' class='td07'><a href='#' id='bind' onclick='addTeacher(&quot"+val.uname+"&quot)'>添加</a>&nbsp;</td></tr>"
+
+                        );
+                    });
+                }
+            });
+            $('#tags_1').tagsInput({
+                width:'auto',
+                onAddTag:function(tag){
+                    console.log('增加了'+tag.uid)
+                },
+            });//这样做的目的是，使tags_1能够变成标签.
+
+            $('[name=tags_2]').tagsInput({width:'auto'});//这样做的目的是，使tags_2能够变成标签。
+        });
+    </script>
+</head>
+
+<body>
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="top" class="td03"><br>
+      <table width="98%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="25" class="F01"><p><img src="../../images/index_35.gif" width="15" height="16" align="absmiddle">绑定设置</p>
+          </td>
+        </tr>
+        <tr>
+          <td height="2" background="../../images/index_39.gif"><img src="../../images/spacer.gif" width="1" height="1"></td>
+        </tr>
+      </table>
+        <table width="90%" border="0" cellpadding="0" cellspacing="0" class="td01">
+            <td>
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td>
+                      <table width="96%"  border="0" align="center" cellpadding="0" cellspacing="0">
+                      </table>
+                      <br>
+                      <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="table01">
+                        <tr>
+                          <td colspan="6" align="center"><h2>绑定设置</h2></td>
+                        </tr>
+                        <tr>
+                          <td width="17%" class="td_top" align="center">老师名称</td>
+                          <td width="15%" align="center" class="td_top">添加</td>
+                        </tr>
+                          <tbody id="list-context">
+                          </tbody>
+                      </table>
+                      <p>&nbsp;</p>
+
+                    <input id="tags_1"type="text" class="tags" value=""/>
+                  <!--  <input name="tags_2" type="hidden" th:each="userinfo:${userList}" th:value="${userinfo.uname}"/>-->
+                    <table>
+                        <tr>
+                          <span style="font-size: 15px;">班级已有教员： <td style="font-size: 13px;" th:each="userinfo:${userList}" th:text="${userinfo.uname}"></td></span>
+                        </tr>
+                    </table>
+                <p>&nbsp;</p></td>
+              </tr>
+          </table>
+                <!--<input type="button" value="绑定"/>-->
+                <button class="button button2">绑定</button>
+            </td>
+        </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

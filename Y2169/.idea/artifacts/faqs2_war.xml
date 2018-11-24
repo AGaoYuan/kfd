@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="faqs2:war">
+    <output-path>D:/S2230文件/faqs2/target</output-path>
+    <root id="archive" name="faqs2.war">
+      <element id="artifact" artifact-name="faqs2:war exploded" />
+    </root>
+  </artifact>
+</component>

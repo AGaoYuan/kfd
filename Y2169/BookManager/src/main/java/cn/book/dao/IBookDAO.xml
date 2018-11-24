@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.book.dao.IBookDAO" >
+
+    <!--<resultMap id="BookMap" type="Book">
+        <collection property="booklist" ofType="BookCategory">
+        </collection>
+    </resultMap>-->
+
+    <select id="getBookAndCategoryList" resultType="Book">
+        SELECT * FROM book,bookcategory
+        <where>
+            book.bookcategory = bookcategory.cateid
+            <if test="bookname!=null">
+                AND book.bookname LIKE '%' #{bookname} '%'
+            </if>
+            <if test="catename!=null">
+              AND bookcategory.catename=#{catename}
+            </if>
+        </where>
+    </select>
+
+    
+</mapper>

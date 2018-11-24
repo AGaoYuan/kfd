@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="_:war exploded">
+    <output-path>$PROJECT_DIR$/_/target/03SpringMVC</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="_" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/_/target/03SpringMVC/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="_/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,437 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>角色管理</title>
+<script type="text/javascript" language="JavaScript1.2" src="../../js/stm31.js"></script>
+<SCRIPT language=javascript src="../../js/tree2.js"></SCRIPT>
+<script language=javascript>
+function fPopUpCalendarDlg(ctrlobj)
+{
+	showx = event.screenX - event.offsetX + 25; // + deltaX;
+	showy = event.screenY - event.offsetY + 18; // + deltaY;
+	retval = window.showModalDialog("../../js/CalendarDlg.htm", "", "dialogWidth:195px; dialogHeight:230px; dialogLeft:"+showx+"px; dialogTop:"+showy+"px; status:no;" );
+	if( retval != null ){
+		document.all.date.value = retval;
+	}else{
+		//alert("canceled");
+	}
+}
+
+function secBoard(n)
+{
+  for(i=0;i<secTable.cells.length;i++)
+    secTable.cells[i].className="sec1";
+  secTable.cells[n].className="sec2";
+  for(i=0;i<mainTable.tBodies.length;i++)
+    mainTable.tBodies[i].style.display="none";
+  mainTable.tBodies[n].style.display="block";
+}
+function windowOpen(theURL,winName,features,width,hight,scrollbars,top,left) 
+{
+  var parameter="top="+top+",left="+left+",width="+width+",height="+hight;
+  if(scrollbars=="no")
+ {parameter+=",scrollbars=no";}
+  else
+ {parameter+=",scrollbars=yes";}
+  window.open(theURL,winName,parameter);
+}
+function openwin(url)
+{
+window.open (url, "look", "height=520, width=600,top=180, left=300, toolbar=no, menubar=no, scrollbars=yes,resizable=yes, location=no, status=no");
+
+}
+</script>
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<br>
+<center>
+  <table width="99%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="480"><table width="480" border="0" cellpadding="0" cellspacing="0" id=secTable>
+          <tr align="center">
+            <td width="120" height="25" class="sec2" onClick="secBoard(0)">按天日程</td>
+            <td width="120" class="sec1" onClick="secBoard(1)">按周日程</td>
+            <td width="120" class="sec1" onClick="secBoard(2)">按月日程</td>
+		  </tr>
+      </table></td>
+      <td class="sec3"><div align="right">
+        <input name="Submit" type="button" class="buttonface02" value="追加日程" onClick="openwin('日程安排（添加，修改，删除）.htm')">
+      </div></td>
+    </tr>
+  </table>
+  <table border="0" cellspacing="0" cellpadding="0" width="99%" height="240" id=mainTable class="main_tab">
+    <tbody style="display:block;">
+      <tr>
+        <td align="center" valign=top><table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="29" background="../../images/bg_03.gif"><div align="center"><img src="../../images/arrowleft.gif" width="20" height="20" align="absmiddle">
+      &nbsp;
+      <input name="textfield" type="text" value="2008" size="6"> 
+      <font color="#FFFFFF">年</font> &nbsp;<img src="../../images/arrowright.gif" width="20" height="20" align="absmiddle"></div></td>
+    <td background="../../images/bg_03.gif"><div align="center"><img src="../../images/arrowleft.gif" width="20" height="20" align="absmiddle">&nbsp;
+      <select name="select">
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+    <font color="#FFFFFF">月</font>&nbsp;<img src="../../images/arrowright.gif" width="20" height="20" align="absmiddle"></div></td>
+    <td background="../../images/bg_03.gif"><div align="center"><img src="../../images/arrowleft.gif" width="20" height="20" align="absmiddle"> &nbsp;
+        <input name="textfield" type="text" value="1" size="4"> 
+        <font color="#FFFFFF">日</font>
+&nbsp;<img src="../../images/arrowright.gif" width="20" height="20" align="absmiddle"></div></td>
+    <td background="../../images/bg_03.gif"><div align="right"><font color="#FFFFFF">日期</font>&nbsp;
+        <input name="date" type="text" value="2008-06-10" size="12">
+        <img src="../../images/15.gif" width="16" height="16" align="absmiddle" onClick="fPopUpCalendarDlg('PARA_YM_NOW')">&nbsp;</div></td>
+  </tr>
+</table>
+<table width="100%"  border="0" cellpadding="0" cellspacing="0" class="table02" align="center">
+  <tr>
+    <td height="30" align="right"><img src="../../images/1.gif" width="4" height="5" align="absmiddle"> 首页　 <img src="../../images/2.gif" width="3" height="5" align="absmiddle"> 上一页　 <img src="../../images/2-2.gif" width="3" height="5" align="absmiddle"> 下一页　 <img src="../../images/3.gif" width="4" height="5" align="absmiddle"> 末页　　共 1 页 1 条记录</td>
+  </tr>
+</table>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table01">
+  <tr height="20">
+    <td width="6%"  nowrap class="td_top"><div align="center">序号</div></td>
+    <td width="12%" nowrap class="td_top"><div align="center">日期</div></td>
+    <td width="9%"  nowrap class="td_top"><div align="center">时间</div></td>
+    <td width="57%"  nowrap class="td_top"><div align="center">昨天未完成日程</div></td>
+    <td width="10%"  nowrap class="td_top"><div align="center">状态</div></td>
+    <td width="6%"  nowrap class="td_top"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">1</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center"><a href="#" onClick="javascript:windowOpen('日程安排（查看详细信息）.htm','','',500,300,'','','')" >查看</a></div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">2</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">3</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">4</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+</table>
+<table width="95%"  border="0" cellpadding="0" cellspacing="0" class="table02" align="center">
+  <tr>
+    <td height="30" align="right"><img src="../../images/1.gif" width="4" height="5" align="absmiddle"> 首页　 <img src="../../images/2.gif" width="3" height="5" align="absmiddle"> 上一页　 <img src="../../images/2-2.gif" width="3" height="5" align="absmiddle"> 下一页　 <img src="../../images/3.gif" width="4" height="5" align="absmiddle"> 末页　　共 1 页 1 条记录</td>
+  </tr>
+</table>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table01">
+  <tr height="20">
+    <td width="6%"  nowrap class="td_top"><div align="center">序号</div></td>
+    <td width="12%" nowrap class="td_top"><div align="center">日期</div></td>
+    <td width="9%"  nowrap class="td_top"><div align="center">时间</div></td>
+    <td width="57%"  nowrap class="td_top"><div align="center">今天要完成日程</div></td>
+    <td width="10%"  nowrap class="td_top"><div align="center">状态</div></td>
+    <td width="6%"  nowrap class="td_top"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">1</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">2</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">3</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">4</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+</table>
+<table width="95%"  border="0" cellpadding="0" cellspacing="0" class="table02" align="center">
+  <tr>
+    <td height="30" align="right"><img src="../../images/1.gif" width="4" height="5" align="absmiddle"> 首页　 <img src="../../images/2.gif" width="3" height="5" align="absmiddle"> 上一页　 <img src="../../images/2-2.gif" width="3" height="5" align="absmiddle"> 下一页　 <img src="../../images/3.gif" width="4" height="5" align="absmiddle"> 末页　　共 1 页 1 条记录</td>
+  </tr>
+</table>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table01">
+  <tr height="20">
+    <td width="6%"  nowrap class="td_top"><div align="center">序号</div></td>
+    <td width="12%" nowrap class="td_top"><div align="center">日期</div></td>
+    <td width="9%"  nowrap class="td_top"><div align="center">时间</div></td>
+    <td width="57%"  nowrap class="td_top"><div align="center">明天将完成日程</div></td>
+    <td width="10%"  nowrap class="td_top"><div align="center">状态</div></td>
+    <td width="6%"  nowrap class="td_top"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">1</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">2</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">3</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+  <tr>
+    <td class="td_02"><div align="center">4</div></td>
+    <td class="td_02"><div align="center">2008-04-10</div></td>
+    <td class="td_02"><div align="center">20:00</div></td>
+    <td class="td_02"><div align="center">我要看2008年欧洲足球锦标赛</div></td>
+    <td class="td_02"><div align="center">未完成</div></td>
+    <td class="td_02"><div align="center">查看</div></td>
+  </tr>
+</table>
+        <br></td>
+      </tr>
+    </tbody>
+	 <tbody style="display:none;">
+      <tr>
+        <td align=center valign=top><table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="29" background="../../images/bg_03.gif"><div align="center"><img src="../../images/arrowleft.gif" width="20" height="20" align="absmiddle">
+      &nbsp;
+      <input name="textfield" type="text" value="2008" size="6"> 
+      <font color="#FFFFFF">年</font>&nbsp;<img src="../../images/arrowright.gif" width="20" height="20" align="absmiddle"></div></td>
+    <td background="../../images/bg_03.gif"><div align="center"><img src="../../images/arrowleft.gif" width="20" height="20" align="absmiddle">&nbsp;
+      <select name="select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6" selected>6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <font color="#FFFFFF">月</font>&nbsp;<img src="../../images/arrowright.gif" width="20" height="20" align="absmiddle"></div></td>
+    <td background="../../images/bg_03.gif"><div align="center"><img src="../../images/arrowleft.gif" width="20" height="20" align="absmiddle"> &nbsp;<font color="#FFFFFF">第</font>
+        <input name="textfield" type="text" value="10" size="4"> 
+    <font color="#FFFFFF">周</font>&nbsp;<img src="../../images/arrowright.gif" width="20" height="20" align="absmiddle"></div></td>
+    <td background="../../images/bg_03.gif"><div align="right"><font color="#FFFFFF">日期</font>&nbsp;
+        <input name="textfield" type="text" value="2008-06-10" size="12">
+    <img src="../../images/15.gif" width="16" height="16" align="absmiddle">&nbsp;</div></td>
+  </tr>
+</table>
+<table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" height="100%" border="0" align="center" cellpadding="3" cellspacing="3" style="font-size:10pt">
+  <tr height="20">
+    <td width="25%" height="20" bgcolor="#C3DAF2"><a style="text-decoration:none" href="#" onClick="onto('周一','2008/06/09')";RETURN FALSE;><font color="#0000c0">周一</font></a>&nbsp;&nbsp;&nbsp; 2008/06/09 </td>
+    <td width="25%" height="20" bgcolor="#C3DAF2"><a style="text-decoration:none" href="#" onClick="onto('周二','2008/06/10')";RETURN FALSE;><font color="#0000c0">周二</font></a>&nbsp;&nbsp;&nbsp; 2008/06/10 </td>
+    <td width="25%" height="20" bgcolor="#C3DAF2"><a style="text-decoration:none" href="#" onClick="onto('周三','2008/06/11')";RETURN FALSE;><font color="#0000c0">周三</font></a>&nbsp;&nbsp;&nbsp; 2008/06/11 </td>
+    <td width="25%" height="20" bgcolor="#C3DAF2"><a style="text-decoration:none" href="#" onClick="onto('周四','2008/06/12')";RETURN FALSE;><font color="#0000c0">周四</font></a>&nbsp;&nbsp;&nbsp; 2008/06/12 </td>
+  </tr>
+  <tr >
+    <td bgcolor="#ECF5FF" height="150"><table height="100%" width="100%" border="0" cellspacing="1">
+        <tr>
+          <td valign="top" align="center">&nbsp </td>
+        </tr>
+    </table></td>
+    <td bgcolor="#ECF5FF" height="100"><table height="80%" width="100%" border="0" cellspacing="1">
+        <tr>
+          <td valign="top" align="center">日程：7条</td>
+        </tr>
+    </table></td>
+    <td bgcolor="#ECF5FF" height="100"><table height="80%" width="100%" border="0" cellspacing="1">
+        <tr>
+          <td valign="top" align="center">&nbsp </td>
+        </tr>
+    </table></td>
+    <td bgcolor="#ECF5FF" height="100"><table height="80%" width="100%" border="0" cellspacing="1">
+        <tr>
+          <td valign="top" align="center">&nbsp </td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr height="20">
+    <td height="20" bgcolor="#C3DAF2"><a style="text-decoration:none" href="#" onClick="onto('周五','2008/06/13')";RETURN FALSE;><font color="#0000c0">周五</font></a>&nbsp;&nbsp;&nbsp; 2008/06/13 </td>
+    <td height="20" bgcolor="#C3DAF2"><a style="text-decoration:none" href="#" onClick="onto('周六','2008/06/14')";RETURN FALSE;><font color="#0000c0">周六</font></a>&nbsp;&nbsp;&nbsp; 2008/06/14 </td>
+    <td height="20" bgcolor="#C3DAF2"><a style="text-decoration:none" href="#" onClick="onto('周日','2008/06/15')";RETURN FALSE;><font color="#0000c0">周日</font></a>&nbsp;&nbsp;&nbsp; 2008/06/15 </td>
+    <td height="20" bgcolor="#C3DAF2">&nbsp;</td>
+  </tr>
+  <tr >
+    <td bgcolor="#ECF5FF" height="150"><table height="80%" width="100%" border="0" cellspacing="1">
+        <tr>
+          <td valign="top" align="center">&nbsp </td>
+        </tr>
+    </table></td>
+    <td bgcolor="#ECF5FF" height="100"><table height="80%" width="100%" border="0" cellspacing="1">
+        <tr>
+          <td valign="top"  align="center">&nbsp </td>
+        </tr>
+    </table></td>
+    <td bgcolor="#ECF5FF" height="100"><table height="80%" width="100%" border="0" cellspacing="1">
+        <tr>
+          <td valign="top" align="center">&nbsp </td>
+        </tr>
+    </table></td>
+    <td height="100" bgcolor="#ECF5FF">&nbsp;</td>
+  </tr>
+</table>
+            <br></td>
+      </tr>
+    </tbody>
+    
+    <tbody style="display:none;">
+      <tr>
+        <td align=center valign=top><table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="29" background="../../images/bg_03.gif"><div align="center"><img src="../../images/arrowleft.gif" width="20" height="20" align="absmiddle">
+      &nbsp;
+      <input name="textfield" type="text" value="2008" size="6"> 
+      <font color="#FFFFFF">年</font>&nbsp;<img src="../../images/arrowright.gif" width="20" height="20" align="absmiddle"></div></td>
+    <td background="../../images/bg_03.gif"><div align="center"><img src="../../images/arrowleft.gif" width="20" height="20" align="absmiddle">&nbsp;
+      <select name="select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6" selected>6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <font color="#FFFFFF">月</font>&nbsp;<img src="../../images/arrowright.gif" width="20" height="20" align="absmiddle"></div></td>
+    <td width="15%" background="../../images/bg_03.gif"><div align="center"></div></td>
+    <td background="../../images/bg_03.gif"><div align="right"><font color="#FFFFFF">日期</font>&nbsp;
+        <input name="textfield" type="text" value="2008-06-10" size="12">
+    <img src="../../images/15.gif" width="16" height="16" align="absmiddle">&nbsp;</div></td>
+  </tr>
+</table>
+<table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" height="100%"  border="0" align="center" cellpadding="2" cellspacing="2">
+  <tr bgcolor="#C3DAF2">
+    <td width="14%" height="20"><div align="center">星期一</div></td>
+    <td width="14%" height="20"><div align="center">星期二</div></td>
+    <td width="14%" height="20"><div align="center">星期三</div></td>
+    <td width="14%" height="20"><div align="center">星期四</div></td>
+    <td width="14%" height="20"><div align="center">星期五</div></td>
+    <td width="14%" height="20"><div align="center">星期六</div></td>
+    <td height="20"><div align="center" style="color:#FF0000">星期日</div></td>
+  </tr> 
+  <tr bgcolor="#ECF5FF">
+    <td height="100">1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+  </tr>
+  <tr bgcolor="#ECF5FF">
+    <td height="100">8</td>
+    <td>9</td>
+    <td><font size="+1">10当前日</font><br>日程：7条</td>
+    <td>11</td>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+  </tr>
+  <tr bgcolor="#ECF5FF">
+    <td height="100">15</td>
+    <td>16</td>
+    <td>17</td>
+    <td>18</td>
+    <td>19</td>
+    <td>20</td>
+    <td>21</td>
+  </tr>
+  <tr bgcolor="#ECF5FF">
+    <td height="100">22</td>
+    <td>23</td>
+    <td>24</td>
+    <td>25</td>
+    <td>26</td>
+    <td>27</td>
+    <td>28</td>
+  </tr>
+  <tr bgcolor="#ECF5FF">
+    <td height="100">29</td>
+    <td>30</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+            <br></td>
+      </tr>
+    </tbody>
+   <tbody style="display:none;">
+    </tbody>
+  </table>
+  <br>
+</center>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>会议添加</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/checkAll.js"></script>
+<script language="javascript" src="../../js/clientSideApp.js"></script>
+<SCRIPT language=JavaScript type=text/JavaScript>
+function GetDate (nText)
+{
+	reVal = window.showModalDialog ("../time.htm", '',
+		"status:no;center:yes;scroll:no;resizable:no;help:no;dialogWidth:255px;dialogHeight:260px");
+	if (reVal != null)
+	{
+		if (nText == 1)
+			document.getElementById("beginTime").value = reVal;
+		if (nText == 2)
+			document.getElementById("endTime").value = reVal;
+	}
+}
+function zuijia()
+{
+	var  str = confirm("确定追加吗？");
+	if(str == true)
+	{
+		alert("追加成功！");
+	}
+	else
+	{
+		alert("取消追加！");
+	}
+}
+function windowOpen(theURL,winName,features,width,hight,scrollbars,top,left) 
+{
+  var parameter="top="+top+",left="+left+",width="+width+",height="+hight;
+  if(scrollbars=="no")
+ {parameter+=",scrollbars=no";}
+  else
+ {parameter+=",scrollbars=yes";}
+  window.open(theURL,winName,parameter);
+}
+function addPerson()
+{
+	var arr=new Array();
+	arr = window.showModalDialog("添加与会人员.htm","new","dialogHeight:400px;dialogWidth:800px;edge:Raised;center:Yes;help:No;resizable:no;status:no;");
+	var person=new Array();
+	for(var i=0;i<document.getElementById("selectPerson").options.length;i++)
+	{
+		person[i]=document.getElementById("selectPerson").options[i].value;
+	}
+	if(person.length==0)
+	{
+		for(var i=0;i<arr.length;i++)
+		{
+			document.getElementById("selectPerson").options.add(new Option(arr[i],arr[i]));
+		}
+	}
+	else
+	{
+		for(var j=0;j<arr.length;j++)
+		{	
+			if(!jsSelectIsExitItem(person,arr[j]))
+			{
+				document.getElementById("selectPerson").options.add(new Option(arr[j],arr[j]));
+			}
+		}
+	}
+}
+function jsSelectIsExitItem(objSelect, objItemValue) {           
+    var isExit = false;           
+    for (var i = 0; i < objSelect.length; i++) {           
+        if (objSelect[i] == objItemValue) {           
+            isExit = true;           
+            break;           
+        }           
+    }           
+    return isExit;           
+}
+function deletePerson() {           
+    var length = document.getElementById("selectPerson").options.length - 1;       
+    for(var i = length; i >= 0; i--){       
+        if(document.getElementById("selectPerson")[i].selected == true){       
+            document.getElementById("selectPerson").options[i] = null;       
+        }       
+    }       
+}
+function addCompere()
+{
+	var name = window.showModalDialog("添加会议主持人_纪要人.htm","new","dialogHeight:420px;dialogWidth:500px;edge:Raised;center:Yes;help:No;resizable:no;status:no;");
+	if(name==null || name=="")
+	{
+		alert('请重新选择！');
+		document.getElementById("compere").value="";
+	}
+	else{
+		document.getElementById("compere").value=name;
+	}
+}
+function addSummary()
+{
+	var name = window.showModalDialog("添加会议主持人_纪要人.htm","new","dialogHeight:420px;dialogWidth:500px;edge:Raised;center:Yes;help:No;resizable:no;status:no;");
+	if(name==null || name=="")
+	{
+		alert('请重新选择！');
+		document.getElementById("summary").value="";
+	}
+	else{
+		document.getElementById("summary").value=name;
+	}
+}
+
+</SCRIPT>
+<style type="text/css">
+<!--
+.style1 {color: #000033}
+-->
+</style>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<form>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="25" align="center" valign="bottom" class="td06"> <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="2%" valign="middle" background="../../images/bg_03.gif">&nbsp;</td>
+        <td width="2%" valign="middle" background="../../images/bg_03.gif"><img src="../../images/main_28.gif" width="9" height="9" align="absmiddle"></td>
+        <td height="30" valign="middle" background="../../images/bg_03.gif"><div align="left"><font color="#FFFFFF">一般会议添加</font></div></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+<table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="td_page"><div align="right">
+        <input name="Submit2" type="button" class="buttonface02" value="查看会议室" onClick="location.href='../meeting/会议室状态查看.htm'">
+        <input name="Submit" type="button" class="buttonface02" value="  返回  " onClick="location.href='召开会议.htm'">
+    </div></td>
+  </tr>
+</table><br>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="table01">
+   <tr>
+     <td width="15%" height="30" class="td_02"><div align="center">主办部门</div></td>
+     <td width="35%" class="td_02"><select name="select2" class="input" style="width:90% ">
+       <option value="1" selected>---请选择---</option>
+       <option value="2">人事部</option>
+       <option value="3">工程部</option>
+     </select></td>
+	 <td class="td_02" width="15%"><div align="center">会议类型</div></td>
+	 <td width="34%" class="td_02"><select name="select3" class="input" style="width:87% ">
+	   <option value="0" selected>---请选择---</option>
+	   <option value="1">一般会议</option>
+	   <option value="2">紧急会议</option>
+          </select>
+	</td>
+    </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">会议名称</div></td>
+     <td colspan="3" class="td_02"><input name="textfield" type="text" class="input" style="width:95% "></td>
+   </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">主&nbsp;&nbsp;持&nbsp;&nbsp;人</div></td>
+     <td colspan="3" class="td_02"><input name="compere" id="compere" type="text" class="input" style="width:86% " readonly="true">
+      <input name="Submit" type="button" class="buttonface02" value="请选择" onClick="addCompere()"></td>
+    </tr>
+   
+   <tr>
+     <td height="30" class="td_02"><div align="center">开始时间</div></td>
+     <td colspan="3" class="td_02"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="40%"><input name="beginTime" id="beginTime" type="text" class="input" value="2008-10-10" size="15" maxlength="12" readonly="true">
+            <img src="../../images/search.gif" width="21" height="20" align="absmiddle" onClick="GetDate(1)">
+            <select name="select" class="input2">
+              <option value="1">01</option>
+              <option value="2">02</option>
+              <option value="3">03</option>
+              <option value="4">04</option>
+              <option value="5">05</option>
+              <option value="6">06</option>
+              <option value="7">07</option>
+              <option value="8" selected>08</option>
+              <option value="9">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+            </select>
+点
+<select name="select" class="input2">
+  <option value="0" selected>00</option>
+  <option value="15">15</option>
+  <option value="30">30</option>
+  <option value="45">45</option>
+</select>
+分 </td>
+          <td width="18%"><div align="center">结束时间</div></td>
+          <td><input name="endTime" id="endTime" type="text" class="input" value="2008-10-10" size="15" maxlength="12" readonly="true">
+            <img src="../../images/search.gif" width="21" height="20" align="absmiddle" onClick="GetDate(2)">
+            <select name="select" class="input2">
+              <option value="1">01</option>
+              <option value="2">02</option>
+              <option value="3">03</option>
+              <option value="4">04</option>
+              <option value="5">05</option>
+              <option value="6">06</option>
+              <option value="7">07</option>
+              <option value="8">08</option>
+              <option value="9">09</option>
+              <option value="10" selected>10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+            </select>
+点
+<select name="select" class="input2">
+  <option value="0" selected>00</option>
+  <option value="15">15</option>
+  <option value="30">30</option>
+  <option value="45">45</option>
+</select>
+分</td>
+        </tr>
+      </table></td>
+    </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">会&nbsp;&nbsp;议&nbsp;&nbsp;室</div></td>
+     <td colspan="3" class="td_02"><select name="select2" class="input" style="width:95% ">
+       <option value="0" selected>全部</option>
+       <option value="1">会议室1</option>
+       <option value="2">会议室2</option>
+          </select></td>
+   </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">与会人员</div></td>
+     <td colspan="3" class="td_02">
+	 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+       <tr>
+         <td width="80%"><select id="selectPerson" size="5" multiple class="box" style="width:60% ">
+         </select>
+           <input name="Submit3" type="button" class="buttonface02" value=" 清除 " onClick="deletePerson(this)">
+           <input name="Submit" type="button" class="buttonface02" value="添加与会人员" onClick="addPerson()"></td>
+         <td valign="bottom"><font color="red">设置会议提醒</font>
+           <input name="checkbox" type="checkbox" value="checkbox"></td>
+       </tr>
+     </table></td>
+	 
+    </tr>
+	
+   <tr>
+     <td height="30" class="td_02"><div align="center">会议内容概要</div></td>
+     <td colspan="3" class="td_02"><textarea name="textfield" rows="5" class="box" style="width:95% "></textarea></td>
+    </tr>
+    <tr>
+     <td height="30" class="td_02"><div align="center">会议附件上传</div></td>
+     <td colspan="3" class="td_02"><div align="center"></div>       <input name="textfield" type="file" class="input" style="width:95% "></td>
+    </tr>
+ </table>
+<br>
+ <table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+     <td class="td_page">     <div align="center">
+       <input name="Submit" type="submit" class="buttonface02" value="  确认  ">
+       &nbsp;
+       <input name="Submit" type="reset" class="buttonface02" value="  重置  ">
+     </div></td></tr>
+ </table>
+ <br>
+</form>
+</body>
+</html>

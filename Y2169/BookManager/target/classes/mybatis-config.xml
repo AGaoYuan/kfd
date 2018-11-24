@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入配置文件 -->
+    <!--<properties resource="database.properties"/>-->
+    <properties resource="database.properties">
+        <property name="jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbc.url" value="jdbc:mysql:///books"/>
+        <property name="jdbc.username" value="root"/>
+        <property name="jdbc.password" value="root"/>
+    </properties>
+
+    <settings>
+        <setting name="autoMappingBehavior" value="FULL"/><!--三种映射级别 NONE  PARTIAL  FULL-->
+    </settings>
+
+    <!-- 给返回值类型设置别名  (默认为类的全名称)  -->
+    <typeAliases>
+        <!-- <typeAlias alias="UserInfo" type="cn.news.entity.UserInfo"/> -->
+        <package name="cn.book.model"></package>
+    </typeAliases>
+
+    <!-- 配置数据源  运行环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 引入mapper.xml文件 -->
+    <mappers>
+        <package name="cn.book.dao"></package>
+    </mappers>
+
+
+</configuration>

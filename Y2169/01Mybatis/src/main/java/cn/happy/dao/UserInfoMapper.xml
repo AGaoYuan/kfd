@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.happy.dao.UserInfoMapper">
+	
+	<!-- 查询用户总记录数 -->
+	<select id="findTotalUser" resultType="int">
+		select count(1) as count from userInfo
+	</select>
+	
+	<sql id="columns">
+		Uid,Uname,Upwd
+	</sql>
+	<!-- 查询用户列表 -->
+	<select id="getUserList" resultType="UserInfo">
+		select <include refid="columns"></include> from userInfo
+	</select>
+	
+	<!-- 查询用户带条件 -->
+	<select id="getUserCondition" resultType="UserInfo">
+		select * from userInfo where uid=#{id}
+	</select>
+
+	<!--模糊查询-->
+	<select id="fuzzFindUser" resultType="UserInfo">
+		select * from userInfo
+		<where>
+			<if test="uname!=null">
+				Uname LIKE '%' {uname} '%'
+			</if>
+			<if test="upwd!=null">
+				and Upwd = #{upwd}
+			</if>
+		</where>
+	</select>
+
+	<!--智能标签ForEach array-->
+	<select id="FindArrayUser" resultType="UserInfo">
+		select * from userInfo
+		<if test="array.length>0">
+		<where>
+			uid in
+			<foreach collection="array" open="(" close=")" separator="," item="myid">
+				#{myid}
+			</foreach>
+		</where>
+		</if>
+	</select>
+
+	<!--智能标签ForEach List-->
+	<select id="FindListUser" resultType="UserInfo">
+		select * from userInfo
+		<where>
+			uid in
+			<foreach collection="list" open="(" close=")" separator="," item="myid">
+				#{myid}
+			</foreach>
+		</where>
+	</select>
+
+	<!--智能标签ForEach List UserInfo-->
+	<select id="FindListUserInfo" resultType="UserInfo">
+		select * from userInfo
+		<where>
+			uid in
+			<foreach collection="list" open="(" close=")" separator="," item="my">
+				#{my.uid}
+			</foreach>
+		</where>
+	</select>
+
+
+	<!--添加用户-->
+	<insert id="saveUser">
+		insert into userInfo(uname,upwd) VALUES(#{uname},#{upwd});
+		<!--<selectKey resultType="int" keyProperty="uid">
+			select @@IDENTITY
+		</selectKey>-->
+	</insert>
+
+
+</mapper>

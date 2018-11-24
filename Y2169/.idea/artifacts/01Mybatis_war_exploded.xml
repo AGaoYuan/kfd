@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="01Mybatis:war exploded">
+    <output-path>$PROJECT_DIR$/01Mybatis/target/Y2169</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="01Mybatis" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: junit:junit:4.3" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.0.8" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.1" />
+          <element id="library" level="project" name="Maven: cglib:cglib:2.2.2" />
+          <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache:2.10.4" />
+          <element id="library" level="project" name="Maven: org.mybatis.caches:mybatis-ehcache:1.1.0" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.6.11" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/01Mybatis/target/Y2169/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="01Mybatis/web/Web" />
+    </root>
+  </artifact>
+</component>

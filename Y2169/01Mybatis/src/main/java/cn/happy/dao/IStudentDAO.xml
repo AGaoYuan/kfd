@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.happy.dao.IStudentDAO">
+
+	<!-- 获取所有部门和员工 -->
+	<select id="getStudentByPid" resultType="Student">
+		SELECT * FROM student_teacher st,student s,teacher t
+		WHERE  st.sid = s.sid
+		AND st.tid = t.tid
+		AND t.tid = #{tid}
+	</select>
+
+
+
+
+</mapper>

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>会议添加</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="../../js/util.js"></script>
+<SCRIPT language=JavaScript type=text/JavaScript>
+function down(id)
+{
+	if(id=="fujian")
+	{
+		document.getElementById("fujian").style.display="";
+		document.getElementById("jiyao").style.display="none";
+	}
+	if(id=="jiyao")
+	{
+		document.getElementById("fujian").style.display="none";
+		document.getElementById("jiyao").style.display="";
+	}
+}
+</SCRIPT>
+<style type="text/css">
+<!--
+.style1 {color: #000033}
+-->
+</style>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<form>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="25" align="center" valign="bottom" class="td06"> <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="2%" valign="middle" background="../../images/bg_03.gif">&nbsp;</td>
+        <td width="2%" valign="middle" background="../../images/bg_03.gif"><img src="../../images/main_28.gif" width="9" height="9" align="absmiddle"></td>
+        <td height="30" valign="middle" background="../../images/bg_03.gif"><div align="left"><font color="#FFFFFF">会议详细内容</font></div></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+<table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="td_page">
+        <div align="right">
+          <input name="Submit" type="button" class="buttonface02" value="  返回  " onClick="location.href='召开会议.htm'">
+        </div></td></tr>
+</table>
+<br>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="table01">
+   <tr>
+     <td width="15%" height="30" class="td_02"><div align="center">主办部门</div></td>
+     <td width="35%" class="td_02">人事部</td>
+     <td width="15%" class="td_02"><div align="center">会议类型</div></td>
+     <td width="35%" class="td_02">一般会议</td>
+   </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">会议名称</div></td>
+     <td class="td_02">会议1</td>
+     <td class="td_02"><div align="center">会议室</div></td>
+     <td class="td_02">会议室1</td>
+   </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">主持人</div></td>
+     <td class="td_02">xxx</td>
+     <td class="td_02"><div align="center">纪要人</div></td>
+     <td class="td_02">xxx</td>
+   </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">开始时间</div></td>
+     <td class="td_02">2008-10-10 08:00 </td>
+     <td class="td_02"><div align="center">结束时间</div></td>
+     <td class="td_02">2008-10-10 10:00 </td>
+   </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">与会人员</div></td>
+     <td colspan="3" class="td_02">xxx、yyy、ddd、aaa</td>
+    </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">会议内容概要</div></td>
+     <td colspan="3" class="td_02">xxx</td>
+    </tr>
+   <tr>
+     <td height="30" class="td_02"><div align="center">会议附件下载</div></td>
+     <td class="td_02"><a href="#" onClick="down('fujian')">下载列表</a></td>
+     <td class="td_02"><div align="center">会议纪要下载</div></td>
+     <td class="td_02"><a href="#" onClick="down('jiyao')">下载列表</a></td>
+   </tr>
+ </table>
+</form>
+<table id="fujian" style="display:none " width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="td_page">
+          <div align="right">
+            <input name="Submit4" type="submit" class="buttonface02" value="删除会议附件">
+        </div></td>
+      </tr>
+    </table>
+      <table width="95%"  border="0" cellpadding="0" cellspacing="0" class="table02" align="center">
+        <tr>
+          <td width="37%" align="right"><div align="left"></div></td>
+          <td width="63%" height="30" align="right"><img src="../../images/1.gif" width="4" height="5" align="absmiddle"> 首页　 <img src="../../images/2.gif" width="3" height="5" align="absmiddle"> 上一页　 <img src="../../images/2-2.gif" width="3" height="5" align="absmiddle"> 下一页　 <img src="../../images/3.gif" width="4" height="5" align="absmiddle"> 末页　　共 1 页 1 条记录</td>
+        </tr>
+      </table>
+      <table width="95%" border="0" align="center" cellpadding="2" cellspacing="0" class="table01">
+        <tr>
+          <td width="5%" class="td_top"><input name="chk" type="checkbox" id="chk" onClick="selectAllByChk(chk,checkbox)" value="checkbox0"></td>
+          <td class="td_top">附件名称</td>
+          <td width="12%" class="td_top">会议名称</td>
+          <td width="12%" class="td_top">会议室</td>
+          <td width="10%" class="td_top">主办部门</td>
+          <td width="12%" class="td_top">开始时间</td>
+          <td width="12%" class="td_top">结束时间</td>
+          <td width="10%" class="td_top">状态</td>
+          <td width="5%" class="td_top">附件</td>
+          <td width="5%" class="td_top">删除</td>
+        </tr>
+        <tr>
+          <td class="td_02"><input type="checkbox" name="checkbox" value="checkbox"></td>
+          <td class="td_02">附件1</td>
+          <td class="td_02"><a href="&#20250;&#35758;&#35814;&#32454;&#20869;&#23481;&#26597;&#30475;.htm">会议1</a></td>
+          <td class="td_02">会议室1</td>
+          <td class="td_02">人事部</td>
+          <td class="td_02">2008-10-10 08:00 </td>
+          <td class="td_02">2008-10-10 09:00 </td>
+          <td class="td_02">召开中...</td>
+          <td class="td_02"><a href="#">下载</a></td>
+          <td class="td_02"><a href="#">删除</a></td>
+        </tr>
+        <tr>
+          <td class="td_02"><input type="checkbox" name="checkbox" value="checkbox"></td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">会议2</td>
+          <td class="td_02">会议室2</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">已结束</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="td_01"><input type="checkbox" name="checkbox" value="checkbox"></td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">会议3</td>
+          <td class="td_01">会议室3</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="td_01"><input type="checkbox" name="checkbox" value="checkbox"></td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">会议6</td>
+          <td class="td_01">会议室1</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="td_01"><input type="checkbox" name="checkbox" value="checkbox"></td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">会议7</td>
+          <td class="td_01">会议室1</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+          <td class="td_01">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="td_02"><input type="checkbox" name="checkbox" value="checkbox"></td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">会议8</td>
+          <td class="td_02">会议室1</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+          <td class="td_02">&nbsp;</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table id="jiyao" style="display:none " width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="td_page">
+            <div align="right">
+              <input name="Submit42" type="submit" class="buttonface02" value="删除会议纪要">
+          </div></td>
+        </tr>
+      </table>
+        <table width="95%"  border="0" cellpadding="0" cellspacing="0" class="table02" align="center">
+          <tr>
+            <td width="37%" align="right"><div align="left"></div></td>
+            <td width="63%" height="30" align="right"><img src="../../images/1.gif" width="4" height="5" align="absmiddle"> 首页　 <img src="../../images/2.gif" width="3" height="5" align="absmiddle"> 上一页　 <img src="../../images/2-2.gif" width="3" height="5" align="absmiddle"> 下一页　 <img src="../../images/3.gif" width="4" height="5" align="absmiddle"> 末页　　共 1 页 1 条记录</td>
+          </tr>
+        </table>
+        <table width="95%" border="0" align="center" cellpadding="2" cellspacing="0" class="table01">
+          <tr>
+            <td width="5%" class="td_top"><input name="chk2" type="checkbox" id="chk2" onClick="selectAllByChk(chk,checkbox)" value="checkbox0"></td>
+            <td class="td_top">纪要名称</td>
+            <td width="12%" class="td_top">会议名称</td>
+            <td width="12%" class="td_top">会议室</td>
+            <td width="10%" class="td_top">主办部门</td>
+            <td width="12%" class="td_top">开始时间</td>
+            <td width="12%" class="td_top">结束时间</td>
+            <td width="10%" class="td_top">状态</td>
+            <td width="5%" class="td_top">纪要</td>
+            <td width="5%" class="td_top">删除</td>
+          </tr>
+          <tr>
+            <td class="td_02"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+            <td class="td_02">附件1</td>
+            <td class="td_02"><a href="&#20250;&#35758;&#35814;&#32454;&#20869;&#23481;&#26597;&#30475;.htm">会议1</a></td>
+            <td class="td_02">会议室1</td>
+            <td class="td_02">人事部</td>
+            <td class="td_02">2008-10-10 08:00 </td>
+            <td class="td_02">2008-10-10 09:00 </td>
+            <td class="td_02">召开中...</td>
+            <td class="td_02"><a href="#">下载</a></td>
+            <td class="td_02"><a href="#">删除</a></td>
+          </tr>
+          <tr>
+            <td class="td_02"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">会议2</td>
+            <td class="td_02">会议室2</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">已结束</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="td_01"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">会议3</td>
+            <td class="td_01">会议室3</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="td_01"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">会议6</td>
+            <td class="td_01">会议室1</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="td_01"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">会议7</td>
+            <td class="td_01">会议室1</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+            <td class="td_01">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="td_02"><input type="checkbox" name="checkbox2" value="checkbox"></td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">会议8</td>
+            <td class="td_02">会议室1</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+            <td class="td_02">&nbsp;</td>
+          </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

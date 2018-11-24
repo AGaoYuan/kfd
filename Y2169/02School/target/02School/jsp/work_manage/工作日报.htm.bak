@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<title></title>
+		<link href="../../css/style.css" rel="stylesheet" type="text/css">
+		<link href="../../css/style_.css" rel="stylesheet" type="text/css">
+		<script>
+function tianjia()
+{
+	if(document.getElementById('title').value=='')
+	{
+		alert('请填写标题！');
+		return false;
+	}
+	else{
+	    return true;
+	}
+}
+</script>
+	</head>
+
+	<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+		<center>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td height="25" align="center" valign="bottom" class="td06">
+						<table width="100%" border="0" align="center" cellpadding="0"
+							cellspacing="0">
+							<tr>
+								<td width="2%" valign="middle"
+									background="../../images/bg_03.gif">
+									&nbsp;
+								</td>
+								<td width="2%" valign="middle"
+									background="../../images/bg_03.gif">
+									<img src="../../images/main_28.gif" width="9" height="9"
+										align="absmiddle">
+								</td>
+								<td height="30" valign="middle"
+									background="../../images/bg_03.gif">
+									<div align="left">
+										<font color="#FFFFFF">工作日报</font>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<form name="form1" method="post" action="/OA/workAction.do?action=index">
+				<table width="95%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="15%" height="30" class="td_form01">
+							标题<font color="red">*</font>
+						</td>
+						<td class="td_form02">
+							<input type="text" id="title" name="title" maxlength="10" class="input"
+								style="width: 95%" value="">
+						</td>
+					</tr>
+					<!-- 
+					<tr>
+						<td width="15%" height="30" class="td_form01">
+							所属单位
+						</td>
+						<td class="td_form02">
+							<select name="select" style="width: 95%">
+							</select>
+							</span>
+							</span>
+							<span><span class="td_form01"> </span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td width="15%" height="30" class="td_form01">
+							上级部门
+						</td>
+						<td class="td_form02">
+							<select name="select" style="width: 95%">
+							</select>
+							</span>
+							</span>
+							<span><span class="td_form01"> </span>
+							</span>
+						</td>
+					</tr>
+					 -->
+					 <!-- 
+					<tr>
+						<td width="15%" height="30" class="td_form01">
+							部门邮箱
+						</td>
+						<td class="td_form02">
+							<input name="email" type="text" class="input"
+								style="width: 95%">
+						</td>
+					</tr> -->
+					<tr>
+						<td width="15%" height="30" class="td_form01">
+							工作内容<font color="red">*</font>
+						</td>
+						<td class="td_form02">
+					 <textarea rows="22" cols="100%" name="content" style="width: 95%"></textarea>
+						
+							
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table width="95%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td align="right" class="td_page">
+							<div>
+								<input name="Submit" type="button" class="buttonface02"
+									onClick="selectall();" value="  查询所有日报  ">
+								<input name="Submit" type="submit" class="buttonface02"
+									onClick="return tianjia()" value="  添加  ">
+								&nbsp;
+								<input name="Submit" type="reset" class="buttonface02"
+									value="  重置  " onclick="resets();">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<a onclick="history.go(-1);" style="cursor:hand">返回上一页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+							</div>
+						</td>
+					</tr>
+				</table>
+				</p>
+			</form>
+		</center>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="01Mybatis" />
+        <module name="02School" />
+        <module name="02Spring" />
+        <module name="04SpringMvc" />
+        <module name="BookManager" />
+        <module name="kfd_day01_java_Tomcat" />
+        <module name="kfd_day01_Springboot_mvc" />
+        <module name="kfd_SpringBoot_Demo" />
+        <module name="MybatisDay01" />
+        <module name="PBCheck" />
+        <module name="School" />
+        <module name="SMBMS" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="01Mybatis" target="1.7" />
+      <module name="02School" target="1.7" />
+      <module name="02Spring" target="1.7" />
+      <module name="03SpringMVC" target="1.7" />
+      <module name="04SpringMvc" target="1.7" />
+      <module name="_" target="1.7" />
+      <module name="BookManager" target="1.7" />
+      <module name="FAQManagement" target="1.7" />
+      <module name="faqs2" target="1.7" />
+      <module name="kfd_day01_java_Tomcat" target="1.7" />
+      <module name="kfd_day01_Springboot_mvc" target="1.7" />
+      <module name="kfd_SpringBoot_Demo" target="1.7" />
+      <module name="MbDemo01" target="1.7" />
+      <module name="MybatisDay01" target="1.7" />
+      <module name="PBCheck" target="1.7" />
+      <module name="School" target="1.7" />
+      <module name="SMBMS" target="1.7" />
+      <module name="Y2169" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

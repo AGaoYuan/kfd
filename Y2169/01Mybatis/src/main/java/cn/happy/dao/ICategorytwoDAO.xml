@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.happy.dao.ICategorytwoDAO">
+	<cache/>
+
+	<resultMap id="CategorytwoMapper" type="Categorytwo">
+		<id column="ctid" property="cid"></id>
+		<result column="ctname" property="cname"></result>
+		<collection property="cates" ofType="Categorytwo" select="getCategorytwo" column="cid">
+		</collection>
+	</resultMap>
+
+	<!--TWO -->
+	<resultMap id="CategorytwoMapperTwo" type="Categorytwo">
+		<id column="ctid" property="cid"></id>
+		<result column="ctname" property="cname"></result>
+		<result column="pid" property="pid"></result>
+		<collection property="cates" ofType="Categorytwo" select="getCategoriesByCid" column="pid">
+		</collection>
+	</resultMap>
+
+	<!-- 获取所有部门和员工 -->
+	<select id="getCategorytwo" resultMap="CategorytwoMapper">
+		SELECT * FROM Categorytwo
+		WHERE  pid = #{pid}
+	</select>
+
+
+	<!-- 获取所有部门和员工  TWO-->
+	<select id="getCategoriesByCid" resultMap="CategorytwoMapperTwo">
+		SELECT * FROM Categorytwo
+		WHERE  cid = #{cid}
+	</select>
+
+
+
+
+</mapper>

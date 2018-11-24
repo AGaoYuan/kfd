@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.school.dao.IUserInfoDAO">
+    <!--验证用户登录-->
+    <select id="isLogin" resultType="UserInfo">
+        select * from sys_userinfo where uname=#{uname} and upwd=#{upwd}
+    </select>
+
+    <!--查询所有班级-->
+    <select id="findAllDictionary" resultType="Dictionary">
+        select * from sys_dictionary
+    </select>
+
+    <!--查询所有老师-->
+    <select id="findUserAll" resultType="UserInfo">
+        SELECT * FROM sys_userinfo WHERE ugradeid = 0
+    </select>
+
+    <!--班级和老师进行绑定，添加-->
+    <insert id="SaveBind">
+        INSERT INTO sys_class_teacher(cid,tid) VALUES (#{cid},#{tid})
+    </insert>
+
+    <!--根据学生的班级id查询该班级-->
+    <select id="getDictionaryByUGradeId" resultType="Dictionary">
+        SELECT dicid,dicname FROM sys_dictionary
+        WHERE dicid  = (SELECT ugradeid FROM sys_userinfo WHERE ugradeid=#{ugradeid})
+    </select>
+
+    <!--根据班级id查询该班级所有的老师-->
+    <select id="getTeacherByDicId" resultType="UserInfo">
+        SELECT uid,uname FROM sys_userinfo
+        WHERE uid IN (SELECT tid FROM sys_class_teacher WHERE cid=#{cid})
+    </select>
+
+ </mapper>
