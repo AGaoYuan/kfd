@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringCloud20EurekaServer:war">
+    <output-path>$PROJECT_DIR$/SpringCloud20EurekaServer/target</output-path>
+    <root id="archive" name="SpringCloud2.0-eureka-server.war">
+      <element id="artifact" artifact-name="SpringCloud20EurekaServer:war exploded" />
+    </root>
+  </artifact>
+</component>

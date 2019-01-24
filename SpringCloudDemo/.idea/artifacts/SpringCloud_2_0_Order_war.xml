@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringCloud-2.0-Order:war">
+    <output-path>$PROJECT_DIR$/SpringCloud-2.0-Order/target</output-path>
+    <root id="archive" name="SpringCloud-2.0-Order.war">
+      <element id="artifact" artifact-name="SpringCloud-2.0-Order:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringCloud-2.0-Eureka9100" />
+        <module name="SpringCloud-2.0-Member" />
+        <module name="SpringCloud-2.0-Order" />
+        <module name="SpringCloud20EurekaServer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SpringCloud-2.0-Eureka9100" target="1.7" />
+      <module name="SpringCloud-2.0-Member" target="1.7" />
+      <module name="SpringCloud-2.0-Order" target="1.7" />
+      <module name="SpringCloud20EurekaServer" target="1.7" />
+      <module name="SpringCloudDemo" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
