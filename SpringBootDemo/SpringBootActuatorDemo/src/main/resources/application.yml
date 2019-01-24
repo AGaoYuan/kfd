@@ -1,0 +1,19 @@
+###通过下面的配置启用所有的监控端点，默认情况下，这些端点是禁用的：management:
+management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/s2230myschool
+    username: root
+    password: root
+
+#开头加info是代表自定义应用信息
+info:
+  kfd:
+  name: gaoyuan

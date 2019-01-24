@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="RealEstateInformationQuery:war">
+    <output-path>$PROJECT_DIR$/RealEstateInformationQuery/target</output-path>
+    <root id="archive" name="RealEstateInformationQuery.war">
+      <element id="artifact" artifact-name="RealEstateInformationQuery:war exploded" />
+    </root>
+  </artifact>
+</component>

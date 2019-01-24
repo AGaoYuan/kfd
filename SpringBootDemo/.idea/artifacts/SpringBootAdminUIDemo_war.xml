@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringBootAdminUIDemo:war">
+    <output-path>$PROJECT_DIR$/SpringBootAdminUIDemo/target</output-path>
+    <root id="archive" name="SpringBootAdminUIDemo.war">
+      <element id="artifact" artifact-name="SpringBootAdminUIDemo:war exploded" />
+    </root>
+  </artifact>
+</component>
